@@ -1,26 +1,43 @@
-html {font-size: 100%;} /*16px*/
-*{
+html {
+    font-size: 100%;
+}
+
+/*16px*/
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
+
 body {
-    font-family: var(--family-font);
+    font-family: var(--text);
     font-weight: 400;
     line-height: 1.75;
-    color: var(--color_black);
-    background: var(--color_white);
-    background-color: var(--color_white);
+    color: var(--black);
+    background: var(--white);
+    background-color: var(--white);
 }
-section{
+
+section {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 1rem;
 }
 
-h1, h2, h3, h4, h5 {
-    font-family: var(--family-font);
+h1 {
+    font-family: var(--heading1);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: var(--heading2);
+}
+
+h3,
+h4,
+h5 {
+    font-family: var(--text);
     font-weight: 400;
     line-height: 1.5;
 }
@@ -32,25 +49,32 @@ h1 {
 
 h2 {
     font-size: var(--heading-h2);
-    color: var(--color_blue_30);
+    color: var(--black);
 }
 
 h3 {
     font-size: var(--heading-h3);
 }
 
-h4 {font-size: var(--heading-h4);}
+h4 {
+    font-size: var(--heading-h4);
+}
 
-h5 {font-size: var(--heading-h5);}
+h5 {
+    font-size: var(--heading-h5);
+}
 
-small, .text_small {font-size: var(--body-small);}
+small,
+.text_small {
+    font-size: var(--body-small);
+}
 
-img{
+img {
     max-width: 100%;
 }
 
-a{
-    color: var(--color_black);
+a {
+    color: var(--black);
     text-decoration: none;
     border-bottom: 3px solid;
 }

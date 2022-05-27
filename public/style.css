@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "PWChalk";
+  src: url("fonts/PWChalk.ttf");
+}
+@font-face {
+  font-family: "Calibri";
+  src: url("fonts/calibri.ttf");
+}
+@font-face {
+  font-family: "ModernaBold";
+  src: url("fonts/Los Andes - Moderna-Bold.otf");
+}
 :root {
   --color_white: hsl(210, 100%, 100%);
   --color_grey_85: hsl(0, 0%, 85%);
@@ -9,7 +21,9 @@
   --color_orange_50: hsl(30, 65%, 50%);
   --color_green_50: hsl(125, 45%, 50%);
   --color_red_50: hsl(0, 45%, 50%);
-  --family-font: "open sans";
+  --heading1: "PWChalk";
+  --heading2: "ModernaBold";
+  --text: "Calibri";
   --heading-h1: 48.83px;
   --heading-h2: 39.06px;
   --heading-h3: 31.25px;
@@ -44,12 +58,12 @@ html {
 }
 
 body {
-  font-family: var(--family-font);
+  font-family: var(--text);
   font-weight: 400;
   line-height: 1.75;
-  color: var(--color_black);
-  background: var(--color_white);
-  background-color: var(--color_white);
+  color: var(--black);
+  background: var(--white);
+  background-color: var(--white);
 }
 
 section {
@@ -59,8 +73,19 @@ section {
   padding: 1rem;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: var(--family-font);
+h1 {
+  font-family: var(--heading1);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: var(--heading2);
+}
+
+h3,
+h4,
+h5 {
+  font-family: var(--text);
   font-weight: 400;
   line-height: 1.5;
 }
@@ -72,7 +97,7 @@ h1 {
 
 h2 {
   font-size: var(--heading-h2);
-  color: var(--color_blue_30);
+  color: var(--black);
 }
 
 h3 {
@@ -87,7 +112,8 @@ h5 {
   font-size: var(--heading-h5);
 }
 
-small, .text_small {
+small,
+.text_small {
   font-size: var(--body-small);
 }
 
@@ -96,7 +122,7 @@ img {
 }
 
 a {
-  color: var(--color_black);
+  color: var(--black);
   text-decoration: none;
   border-bottom: 3px solid;
 }

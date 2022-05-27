@@ -1,39 +1,54 @@
+// font
+@font-face {
+  font-family: 'PWChalk';
+  src: url('fonts/PWChalk.ttf');
+}
+
+@font-face {
+  font-family: 'Calibri';
+  src: url('fonts/calibri.ttf');
+}
+
+@font-face {
+  font-family: 'ModernaBold';
+  src: url('fonts/Los Andes - Moderna-Bold.otf');
+}
+
 :root {
-    --color_white: hsl(210, 100%, 100%);
-    --color_grey_85: hsl(0, 0%, 85%);
-    --color_grey_95: hsl(0, 0%, 95%);
-    --color_black: hsl(0, 0%, 12%);
-    --color_blue_30: hsl(209, 46%, 30%);
-    --color_blue_80: hsl(210, 45%, 80%);
-    --color_blue_50: hsl(210, 45%, 50%);
-    --color_orange_50: hsl(30, 65%, 50%);
-    --color_green_50: hsl(125, 45%, 50%);
-    --color_red_50: hsl(0, 45%, 50%);
+  --color_white: hsl(210, 100%, 100%);
+  --color_grey_85: hsl(0, 0%, 85%);
+  --color_grey_95: hsl(0, 0%, 95%);
+  --color_black: hsl(0, 0%, 12%);
+  --color_blue_30: hsl(209, 46%, 30%);
+  --color_blue_80: hsl(210, 45%, 80%);
+  --color_blue_50: hsl(210, 45%, 50%);
+  --color_orange_50: hsl(30, 65%, 50%);
+  --color_green_50: hsl(125, 45%, 50%);
+  --color_red_50: hsl(0, 45%, 50%);
 
+  --heading1: 'PWChalk';
+  --heading2: 'ModernaBold';
+  --text: 'Calibri';
 
-    --family-font: "open sans";
-
-    --heading-h1: 48.83px;
-    --heading-h2: 39.06px;
-    --heading-h3: 31.25px;
-    --heading-h4: 25.00px;
-    --heading-h5: 20.00px;
-    --body-larg: 20.00px;
-    --body: 16px;
-    --body-small: 14.4px;
-
-    
+  --heading-h1: 48.83px;
+  --heading-h2: 39.06px;
+  --heading-h3: 31.25px;
+  --heading-h4: 25.00px;
+  --heading-h5: 20.00px;
+  --body-larg: 20.00px;
+  --body: 16px;
+  --body-small: 14.4px;
 }
 
 @media (max-width: 768px) {
-    :root {
-      --heading-h1: 39.06px;
-      --heading-h2: 31.25px;
-      --heading-h3: 25.00px;
-      --heading-h4: 20.00px;
-      --heading-h5: 16px;
-      --body-larg: 14px;
-      --body: 12px;
-      --body-small: 10px;
-    }
+  :root {
+    --heading-h1: 39.06px;
+    --heading-h2: 31.25px;
+    --heading-h3: 25.00px;
+    --heading-h4: 20.00px;
+    --heading-h5: 16px;
+    --body-larg: 14px;
+    --body: 12px;
+    --body-small: 10px;
+  }
 }
