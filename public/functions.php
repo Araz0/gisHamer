@@ -55,7 +55,7 @@ function createMainCategory($main_category_name, $main_category_icon) {
     $sth = $dbh->prepare($query);
     $sth->bindParam('title', $main_category_name, PDO::PARAM_STR);
     $sth->bindParam('icon', $main_category_icon, PDO::PARAM_STR);
-    $sth->bindParam('type', 'i dont think we need this field', PDO::PARAM_STR);
+    $sth->bindParam('type', 'maincategory', PDO::PARAM_STR);
     $sth->execute();
 }
 
@@ -66,6 +66,6 @@ function createSubCategory($category_name, $parent_category_id) {
     $sth->bindParam('title', $category_name, PDO::PARAM_STR);
     $sth->bindParam('icon', '', PDO::PARAM_STR);
     $sth->bindParam('type', 'subcategory', PDO::PARAM_STR);
-    $sth->bindParam('category_id', 1, PDO::PARAM_INT);
+    $sth->bindParam('category_id', $parent_category_id, PDO::PARAM_INT);
     $sth->execute();
 }

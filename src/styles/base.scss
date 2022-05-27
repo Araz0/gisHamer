@@ -2,7 +2,6 @@ html {
     font-size: 100%;
 }
 
-/*16px*/
 * {
     margin: 0px;
     padding: 0px;
@@ -14,8 +13,8 @@ body {
     font-weight: 400;
     line-height: 1.75;
     color: var(--black);
-    background: var(--white);
-    background-color: var(--white);
+    background-image: url("../media/background.png");
+    background-color: var(--darkblue);
 }
 
 section {
@@ -27,11 +26,18 @@ section {
 
 h1 {
     font-family: var(--heading1);
+    font-weight: 400;
     text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+    margin-top: 0;
+    font-size: var(--heading-h1);
 }
 
 h2 {
     font-family: var(--heading2);
+    font-size: var(--heading-h2);
+    color: var(--black);
 }
 
 h3,
@@ -42,15 +48,6 @@ h5 {
     line-height: 1.5;
 }
 
-h1 {
-    margin-top: 0;
-    font-size: var(--heading-h1);
-}
-
-h2 {
-    font-size: var(--heading-h2);
-    color: var(--black);
-}
 
 h3 {
     font-size: var(--heading-h3);
@@ -76,7 +73,6 @@ img {
 a {
     color: var(--black);
     text-decoration: none;
-    border-bottom: 3px solid;
 }
 
 p {

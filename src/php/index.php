@@ -8,8 +8,11 @@
 
 <body>
     <?php require "parts/nav.php"; ?>
-    <section>
+    <section class="section-categories">
         <h1>Gishamer Intranet</h1>
+    </section>
+    <section class="section-news">
+        <h1>News</h1>
     </section>
 </body>
 </html>
