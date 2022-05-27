@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<?php include './parts/head.php' ?>
+<html lang="de">
+
+<?php 
+    $pagetitle = "Home";
+    require "./parts/head.php";
+?>
+
 <body>
-    <h1>test</h1>
+    <?php require "parts/nav.php"; ?>
+    <section>
+        <h1>Gishamer Intranet</h1>
+    </section>
 </body>
 </html>
