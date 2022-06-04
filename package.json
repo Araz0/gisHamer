@@ -8,6 +8,8 @@
     "build:php": "rsync -rvz --progress ./src/php/ ./public/ --delete",
     "build:sass": "sass ./src/styles/index.scss ./public/style.css",
     "build:js": "esbuild ./src/js/index.js --bundle --outfile=./public/js/script.js",
+    "build:fonts": "rsync -vaE --progress ./src/fonts/ ./public/fonts",
+    "build:media": "rsync -vaE --progress ./src/media/ ./public/media",
     "build": "npm-run-all build:*"
   },
   "repository": {

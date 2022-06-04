@@ -1,21 +1,33 @@
+@font-face {
+  font-family: "PWChalk";
+  src: url("fonts/PWChalk.ttf");
+}
+@font-face {
+  font-family: "Calibri";
+  src: url("fonts/calibri.ttf");
+}
+@font-face {
+  font-family: "ModernaBold";
+  src: url("fonts/Los Andes - Moderna-Bold.otf");
+}
 :root {
-  --color_white: hsl(210, 100%, 100%);
-  --color_grey_85: hsl(0, 0%, 85%);
-  --color_grey_95: hsl(0, 0%, 95%);
-  --color_black: hsl(0, 0%, 12%);
-  --color_blue_30: hsl(209, 46%, 30%);
-  --color_blue_80: hsl(210, 45%, 80%);
-  --color_blue_50: hsl(210, 45%, 50%);
-  --color_orange_50: hsl(30, 65%, 50%);
-  --color_green_50: hsl(125, 45%, 50%);
-  --color_red_50: hsl(0, 45%, 50%);
-  --family-font: "open sans";
-  --heading-h1: 48.83px;
-  --heading-h2: 39.06px;
-  --heading-h3: 31.25px;
-  --heading-h4: 25.00px;
-  --heading-h5: 20.00px;
-  --body-larg: 20.00px;
+  --white: #FFFFFF;
+  --black: #000000;
+  --darkblue: #3058A1;
+  --yellow: #F3CD45;
+  --lightgrey: #E5E5E5;
+  --midgrey: #777777;
+  --darkgrey: #444444;
+  --red: #B72626;
+  --heading1: "PWChalk";
+  --heading2: "ModernaBold";
+  --text: "Calibri";
+  --heading-h1: 39.06px;
+  --heading-h2: 31.25px;
+  --heading-h3: 25.00px;
+  --heading-h4: 20.00px;
+  --heading-h5: 18.00px;
+  --body-larg: 18.00px;
   --body: 16px;
   --body-small: 14.4px;
 }
@@ -36,7 +48,6 @@ html {
   font-size: 100%;
 }
 
-/*16px*/
 * {
   margin: 0px;
   padding: 0px;
@@ -44,12 +55,12 @@ html {
 }
 
 body {
-  font-family: var(--family-font);
+  font-family: var(--text);
   font-weight: 400;
   line-height: 1.75;
-  color: var(--color_black);
-  background: var(--color_white);
-  background-color: var(--color_white);
+  color: var(--black);
+  background-image: url("../media/background.png");
+  background-color: var(--darkblue);
 }
 
 section {
@@ -59,20 +70,28 @@ section {
   padding: 1rem;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: var(--family-font);
-  font-weight: 400;
-  line-height: 1.5;
-}
-
 h1 {
+  font-family: var(--heading1);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--white);
   margin-top: 0;
   font-size: var(--heading-h1);
 }
 
 h2 {
+  font-family: var(--heading2);
   font-size: var(--heading-h2);
-  color: var(--color_blue_30);
+  color: var(--black);
+}
+
+h3,
+h4,
+h5 {
+  font-family: var(--text);
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 h3 {
@@ -87,7 +106,8 @@ h5 {
   font-size: var(--heading-h5);
 }
 
-small, .text_small {
+small,
+.text_small {
   font-size: var(--body-small);
 }
 
@@ -96,9 +116,8 @@ img {
 }
 
 a {
-  color: var(--color_black);
+  color: var(--black);
   text-decoration: none;
-  border-bottom: 3px solid;
 }
 
 p {
@@ -106,11 +125,70 @@ p {
   line-height: 1.4rem;
 }
 
-body {
-  margin: 0px;
-  padding-bottom: 10px;
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input[type=submit] {
+  margin-top: 1rem;
+}
+
+input {
+  width: 250px;
+  border-radius: 10px;
+  border: none;
   font-size: 1rem;
-  background-color: #0f0;
+  font-weight: 400;
+}
+
+input[type=text] {
+  padding: 0.8em 1.8rem;
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  cursor: pointer;
+  padding: 0.8em 2rem;
+  background-color: var(--darkblue);
+  color: var(--white);
+}
+
+.section-categories {
+  background-color: var(--white);
+  background: var(--white);
+}
+.section-categories h1 {
+  color: var(--midgrey);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
+  background-color: var(--darkblue);
+}
+.header ul {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2.5rem;
+}
+.header ul li:nth-child(2) {
+  margin-left: auto;
+}
+.header ul:first-child {
+  padding-top: 0.5rem;
+}
+.header li {
+  list-style-type: none;
+}
+.header a {
+  font-size: 1.2rem;
+  color: var(--white);
+}
+.header img {
+  height: 70px;
 }
 
 /*# sourceMappingURL=style.css.map */
