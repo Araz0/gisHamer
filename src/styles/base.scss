@@ -89,12 +89,13 @@ form {
     background-color: var(--darkgrey);
     color: var(--white);
     border-radius: 1rem;
-    a{
+    a {
         color: var(--white);
     }
 }
 
-input {
+input,
+select {
     width: 250px;
     border-radius: 10px;
     border: none;
@@ -103,7 +104,8 @@ input {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+select {
     padding: 0.8em 1rem;
 }
 
@@ -112,6 +114,7 @@ input[type="submit"],
 input[type="reset"] {
     cursor: pointer;
     padding: 0.8em 2rem;
+    margin-top: 1rem;
     background-color: var(--darkblue);
     color: var(--white);
 }
