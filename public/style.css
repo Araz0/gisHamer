@@ -14,6 +14,7 @@
   --white: #FFFFFF;
   --black: #000000;
   --darkblue: #3058A1;
+  --darkbluelighter: #3f6ec6;
   --yellow: #F3CD45;
   --lightgrey: #E5E5E5;
   --midgrey: #777777;
@@ -128,9 +129,18 @@ p {
 form {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  width: fit-content;
+  background-color: var(--darkgrey);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
 }
 form input[type=submit] {
   margin-top: 1rem;
+}
+form label:not(:first-child) {
+  margin-top: 0.5rem;
 }
 
 input {
@@ -152,6 +162,12 @@ input[type=reset] {
   padding: 0.8em 2rem;
   background-color: var(--darkblue);
   color: var(--white);
+}
+
+input[type=button]:hover,
+input[type=submit]:hover,
+input[type=reset]:hover {
+  background-color: var(--darkbluelighter);
 }
 
 .section-categories {

@@ -48,7 +48,6 @@ h5 {
     line-height: 1.5;
 }
 
-
 h3 {
     font-size: var(--heading-h3);
 }
@@ -83,9 +82,17 @@ p {
 form {
     display: flex;
     flex-direction: column;
-
-    input[type=submit] {
+    margin: 0 auto;
+    width: fit-content;
+    background-color: var(--darkgrey);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    input[type="submit"] {
         margin-top: 1rem;
+    }
+    label:not(:first-child) {
+        margin-top: 0.5rem;
     }
 }
 
@@ -97,15 +104,20 @@ input {
     font-weight: 400;
 }
 
-input[type=text] {
+input[type="text"] {
     padding: 0.8em 1.8rem;
 }
 
-input[type=button],
-input[type=submit],
-input[type=reset] {
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
     cursor: pointer;
     padding: 0.8em 2rem;
     background-color: var(--darkblue);
     color: var(--white);
+}
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: var(--darkbluelighter);
 }
