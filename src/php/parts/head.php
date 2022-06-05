@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     $root = str_replace($_SERVER['SCRIPT_NAME'],'',$_SERVER['SCRIPT_FILENAME']);
     require "$root/functions.php";
 ?>
