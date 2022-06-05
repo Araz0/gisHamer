@@ -2,7 +2,6 @@
 <html lang="de">
 <?php 
     $pagetitle = "Create Sub Category";
-    require '../functions.php';
     require "../parts/head.php";
  
     if (isset($_POST['create_sub_category'])) {

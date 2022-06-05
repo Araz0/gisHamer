@@ -2,7 +2,6 @@
 <html lang="de">
 <?php 
     $pagetitle = "Create Main Category";
-    require '../functions.php';
     require "../parts/head.php";
  
     if (isset($_POST['create_main_category'])) {
