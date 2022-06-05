@@ -5,6 +5,10 @@ $usernameRegex = "/^([a-z0-9A-Z.-_]*)$/";
 $errors = array();
 $storage_folder = "images";
 
+function userIsLoggedIn(){
+    return isset($_SESSION['USER']);
+}
+
 function makeStrUrlReady($string){
     $change_letters_from = ['ä','ö','ü',' '];
     $change_letters_to = ['ea','eo','eu','_'];
