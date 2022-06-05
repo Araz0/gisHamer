@@ -104,8 +104,9 @@ input {
     font-weight: 400;
 }
 
-input[type="text"] {
-    padding: 0.8em 1.8rem;
+input[type="text"],
+input[type="password"] {
+    padding: 0.8em 1rem;
 }
 
 input[type="button"],
