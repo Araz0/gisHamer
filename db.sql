@@ -1,5 +1,5 @@
-create database gishamer_intranet;
-
+-- create database gishamer_intranet;
+-- truncate users;
 CREATE TABLE users(
     ID serial PRIMARY KEY NOT NULL,
     username VARCHAR(255) NOT NULL,
