@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <?php 
-    $pagetitle = "Create Main Category";
+    $pagetitle = "Create Main Category | Gishamer";
     require "../parts/head.php";
  
     if(!userIsLoggedIn()){

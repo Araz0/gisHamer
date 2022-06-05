@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <?php 
-    $pagetitle = "Create Sub Category";
+    $pagetitle = "Create Sub Category | Gishamer";
     require "../parts/head.php";
 
     if(!userIsLoggedIn()){

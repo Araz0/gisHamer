@@ -2,7 +2,7 @@
 <html lang="de">
 
 <?php 
-    $pagetitle = "Home";
+    $pagetitle = "Create User | Gishamer";
     require "./parts/head.php";
     if (isset($_POST['create_user'])) {
         $user_username = $_POST['user_username'];

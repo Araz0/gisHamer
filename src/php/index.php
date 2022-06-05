@@ -2,7 +2,7 @@
 <html lang="de">
 
 <?php 
-    $pagetitle = "Home";
+    $pagetitle = "Home | Gishamer";
     require "./parts/head.php";
     checkIfInitStartup();
 ?>

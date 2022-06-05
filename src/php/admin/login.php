@@ -2,7 +2,7 @@
 <html lang="de">
 
 <?php 
-    $pagetitle = "Home";
+    $pagetitle = "Login | Gishamer";
     require "../parts/head.php";
     checkIfInitStartup();
 
@@ -51,7 +51,7 @@
             <label for="user_password"><b>Password</b></label>
             <input type="password" id="user_password" name="user_password" placeholder="Password der User" required>
 
-            <input type="submit" value='Speichern' name='admin_login'>
+            <input type="submit" value='Login' name='admin_login'>
         </form>
     </section>
     
