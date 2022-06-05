@@ -5,6 +5,11 @@
     $pagetitle = "Home";
     require "../parts/head.php";
     checkIfInitStartup();
+
+    if(userIsLoggedIn()){
+        header("Location: /index.php");
+    }
+
     if (isset($_POST['admin_login'])) {
     
         $username = $_POST['user_username'];
@@ -38,7 +43,7 @@
     <?php require "../parts/nav.php"; ?>
     <h1>Admin Login</h1>
     <section>
-        <?php include('../parts/errors.php'); ?>
+        <?php include('../parts/popups.php'); ?>
         <form action="" method="post" enctype="multipart/form-data">
             <label for="user_username"><b>Username</b> (a-z0-9A-Z.-_)</label>
             <input type="text" id="user_username" name="user_username" placeholder="Username der User" pattern="<?php echo substr($usernameRegex, 1, -1); ?>" required>

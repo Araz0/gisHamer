@@ -3,7 +3,11 @@
 <?php 
     $pagetitle = "Create Sub Category";
     require "../parts/head.php";
- 
+
+    if(!userIsLoggedIn()){
+        header("Location: /admin/login.php");
+    }
+
     if (isset($_POST['create_sub_category'])) {
         $category_name = $_POST['category_name'];
         $parent_category_id = $_POST['parent_category_id'];

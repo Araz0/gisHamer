@@ -4,6 +4,10 @@
     $pagetitle = "Create Main Category";
     require "../parts/head.php";
  
+    if(!userIsLoggedIn()){
+        header("Location: /admin/login.php");
+    }
+
     if (isset($_POST['create_main_category'])) {
         $main_category_name = $_POST['main_category_name'];
 
