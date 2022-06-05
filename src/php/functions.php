@@ -79,7 +79,7 @@ function checkIfInitStartup(){
     $sth->execute();
     $result = $sth->fetchAll();
     if (count((array)$result) < 1){ 
-        header('Location: create_user.php');
+        header('Location: admin/create_user.php');
         exit;
     }
 }
@@ -99,4 +99,12 @@ function createtUser($username, $password, $sec_question, $sec_answer){
     $sth->bindParam('sec_question', $sec_question, PDO::PARAM_STR);
     $sth->bindParam('sec_answer', $sec_answer, PDO::PARAM_STR);
     $sth->execute();
+}
+function getUser($username){
+    global $dbh;
+    $username = strtolower($username);
+    $query = "SELECT * FROM users WHERE username=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($username));
+    return $sth->fetch();
 }
