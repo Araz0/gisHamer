@@ -5,6 +5,14 @@ $usernameRegex = "/^([a-z0-9A-Z.-_]*)$/";
 $errors = array();
 $storage_folder = "images";
 
+$sec_questions = array(
+    "What city were you born in?",
+    "What is your oldest sibling's middle name?",
+    "What was the first concert you attended?",
+    "What was the make and model of your first car?",
+    "In what city or town did your parents meet?"
+);
+
 function userIsLoggedIn(){
     return isset($_SESSION['USER']);
 }
