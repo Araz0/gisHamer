@@ -20,14 +20,14 @@
 
 <body>
     <?php require "parts/nav.php"; ?>
+    <h1>User erstellen</h1>
     <section>
-        <h1>User erstellen</h1>
         <form action="" method="post" enctype="multipart/form-data">
             <label for="user_username"><b>Username</b> (a-z0-9A-Z.-_)</label>
             <input type="text" id="user_username" name="user_username" placeholder="Username der User" pattern="<?php echo substr($usernameRegex, 1, -1); ?>" required>
             
             <label for="user_password"><b>Password</b></label>
-            <input type="text" id="user_password" name="user_password" placeholder="Password der User" required>
+            <input type="password" id="user_password" name="user_password" placeholder="Password der User" required>
             
             <label for="sec_question"><b>Security question</b></label>
             <input type="text" id="sec_question" name="sec_question" placeholder="Sicherheitsfrage der User" required>
