@@ -12,8 +12,9 @@
 
         if (empty($errors)) {
             createtUser($user_username, $user_password, $sec_question, $sec_answer);
+            header('Location: /');
         }
-        header('Location: /');
+        
     }
     
 ?>
@@ -31,12 +32,17 @@
                 <input type="password" id="user_password" name="user_password" placeholder="Password der User" required>
             </label>
             
-            <label for="sec_question"><b>Security question</b><br>
-                <input type="text" id="sec_question" name="sec_question" placeholder="Sicherheitsfrage der User" required>
+            <label for="sec_question"><b>Sicherheitsfrage wählen</b><br>
+                <select id="sec_question" name="sec_question" required>
+                    <option value="">Frage wählen...</option>
+                    <?php foreach ($sec_questions as $i  => $question) : ?>
+                        <option value="<?php echo $i; ?>"><?php echo $question; ?></option>
+                    <?php endforeach ?>
+                </select>
             </label>
             
-            <label for="sec_answer"><b>Security answer</b><br>
-                <input type="text" id="sec_answer" name="sec_answer" placeholder="Sicherheitsfrage Antwort der User" required>
+            <label for="sec_answer"><b>Sicherheitsfrage Antwort</b><br>
+                <input type="text" id="sec_answer" name="sec_answer" placeholder="Sicherheitsfrage Antwort" required>
             </label>
             
             <input type="submit" value='Speichern' name='create_user'>

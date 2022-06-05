@@ -17,8 +17,9 @@
         if ($main_category_icon == null) { echo implode("\n ",$errors); exit(); }
         if (empty($errors)) {
             createMainCategory($main_category_name);
+            header('Location: /');
         }
-        header('Location: /');
+        
     }
 ?>
 
