@@ -4,6 +4,7 @@
 <?php 
     $pagetitle = "Home";
     require "./parts/head.php";
+    checkIfInitStartup();
 ?>
 
 <body>
