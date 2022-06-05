@@ -12,6 +12,9 @@
 
         if (empty($errors)) {
             createtUser($user_username, $user_password, $sec_question, $sec_answer);
+            $_SESSION["USER"] = $user_username;
+            // HTTPonly
+            setcookie("USER", $user_username, time()+2*24*60*60, NULL, NULL, NULL, TRUE);
             header('Location: /');
         }
         
