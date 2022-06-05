@@ -26,8 +26,9 @@
         <form action="" method="post" enctype="multipart/form-data">
             <input type="hidden" name="parent_category_id" value="1" id="parent_category_id" required>
 
-            <label for="category_name"><b>Titel</b></label>
-            <input type="text" name="category_name" placeholder="Titel der Kategorie" value="" id="category_name" required>
+            <label for="category_name"><b>Titel</b><br>
+                <input type="text" name="category_name" placeholder="Titel der Kategorie" value="" id="category_name" required>
+            </label>
 
             <input type="submit" value='Speichern' name='create_sub_category'>
         </form>

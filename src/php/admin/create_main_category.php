@@ -27,11 +27,13 @@
     <section>
         <h1>Hauptkategorie erstellen</h1>
         <form action="" method="post" enctype="multipart/form-data">
-            <label for="main_category_name"><b>Titel</b></label>
-            <input type="text" name="main_category_name" placeholder="Titel der Hauptkategorie" value="" id="main_category_name" required>
+            <label for="main_category_name"><b>Titel</b><br>
+                <input type="text" name="main_category_name" placeholder="Titel der Hauptkategorie" value="" id="main_category_name" required>
+            </label>
             
-            <label for="main_category_icon"><b>Icon</b></label>
-            <input type="file" name="main_category_icon" id="main_category_icon" max-size="1000" accept="image/*,.jpg" required>
+            <label for="main_category_icon"><b>Icon</b><br>
+                <input type="file" name="main_category_icon" id="main_category_icon" max-size="1000" accept="image/*,.jpg" required>
+            </label>
 
             <input type="submit" value='Speichern' name='create_main_category'>
         </form>

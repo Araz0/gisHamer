@@ -45,12 +45,17 @@
     <section>
         <?php include('../parts/popups.php'); ?>
         <form action="" method="post" enctype="multipart/form-data">
-            <label for="user_username"><b>Username</b> (a-z0-9A-Z.-_)</label>
-            <input type="text" id="user_username" name="user_username" placeholder="Username der User" pattern="<?php echo substr($usernameRegex, 1, -1); ?>" required>
+            <label for="user_username"><b>Username</b> (a-z0-9A-Z.-_)<br>
+                <input type="text" id="user_username" name="user_username" placeholder="Username der User" pattern="<?php echo substr($usernameRegex, 1, -1); ?>" required>
+            </label>
             
-            <label for="user_password"><b>Password</b></label>
-            <input type="password" id="user_password" name="user_password" placeholder="Password der User" required>
+            
+            <label for="user_password"><b>Password</b><br>
+                <input type="password" id="user_password" name="user_password" placeholder="Password der User" required>
+            </label>
+            
 
+            <a href="/admin/reset.php">Password vergessen?</a>
             <input type="submit" value='Login' name='admin_login'>
         </form>
     </section>

@@ -23,19 +23,22 @@
     <h1>User erstellen</h1>
     <section>
         <form action="" method="post" enctype="multipart/form-data">
-            <label for="user_username"><b>Username</b> (a-z0-9A-Z.-_)</label>
-            <input type="text" id="user_username" name="user_username" placeholder="Username der User" pattern="<?php echo substr($usernameRegex, 1, -1); ?>" required>
+            <label for="user_username"><b>Username</b> (a-z0-9A-Z.-_)<br>
+                <input type="text" id="user_username" name="user_username" placeholder="Username der User" pattern="<?php echo substr($usernameRegex, 1, -1); ?>" required>
+            </label>
             
-            <label for="user_password"><b>Password</b></label>
-            <input type="password" id="user_password" name="user_password" placeholder="Password der User" required>
+            <label for="user_password"><b>Password</b><br>
+                <input type="password" id="user_password" name="user_password" placeholder="Password der User" required>
+            </label>d>
             
-            <label for="sec_question"><b>Security question</b></label>
-            <input type="text" id="sec_question" name="sec_question" placeholder="Sicherheitsfrage der User" required>
-
-            <label for="sec_answer"><b>Security answer</b></label>
-            <input type="text" id="sec_answer" name="sec_answer" placeholder="Sicherheitsfrage Antwort der User" required>
+            <label for="sec_question"><b>Security question</b><br>
+                <input type="text" id="sec_question" name="sec_question" placeholder="Sicherheitsfrage der User" required>
+            </label>
             
-
+            <label for="sec_answer"><b>Security answer</b><br>
+                <input type="text" id="sec_answer" name="sec_answer" placeholder="Sicherheitsfrage Antwort der User" required>
+            </label>
+            
             <input type="submit" value='Speichern' name='create_user'>
         </form>
     </section>

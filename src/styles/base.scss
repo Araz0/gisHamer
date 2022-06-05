@@ -88,11 +88,8 @@ form {
     color: var(--white);
     padding: 2rem;
     border-radius: 1rem;
-    input[type="submit"] {
-        margin-top: 1rem;
-    }
-    label:not(:first-child) {
-        margin-top: 0.5rem;
+    a{
+        color: var(--white);
     }
 }
 
