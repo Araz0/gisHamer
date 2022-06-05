@@ -3,7 +3,7 @@
 
 <?php 
     $pagetitle = "Create User | Gishamer";
-    require "./parts/head.php";
+    require "../parts/head.php";
     if (isset($_POST['create_user'])) {
         $user_username = $_POST['user_username'];
         $user_password = $_POST['user_password'];
@@ -19,7 +19,7 @@
 ?>
 
 <body>
-    <?php require "parts/nav.php"; ?>
+    <?php require "../parts/nav.php"; ?>
     <h1>User erstellen</h1>
     <section>
         <form action="" method="post" enctype="multipart/form-data">
@@ -29,7 +29,7 @@
             
             <label for="user_password"><b>Password</b><br>
                 <input type="password" id="user_password" name="user_password" placeholder="Password der User" required>
-            </label>d>
+            </label>
             
             <label for="sec_question"><b>Security question</b><br>
                 <input type="text" id="sec_question" name="sec_question" placeholder="Sicherheitsfrage der User" required>
