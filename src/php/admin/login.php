@@ -54,7 +54,7 @@
             </label>
             
 
-            <a href="/admin/reset.php">Password vergessen?</a>
+            <a href="/admin/recover_user.php">Password vergessen?</a>
             <input type="submit" value='Login' name='admin_login'>
         </form>
     </section>
