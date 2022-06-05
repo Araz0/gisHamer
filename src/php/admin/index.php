@@ -4,7 +4,6 @@
 <?php 
     $pagetitle = "Admin | Gishamer";
     require "../parts/head.php";
-    checkIfInitStartup();
 ?>
 
 <body>

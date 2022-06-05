@@ -4,7 +4,6 @@
 <?php 
     $pagetitle = "Home | Gishamer";
     require "./parts/head.php";
-    checkIfInitStartup();
 ?>
 
 <body>

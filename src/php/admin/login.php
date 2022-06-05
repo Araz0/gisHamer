@@ -4,7 +4,6 @@
 <?php 
     $pagetitle = "Login | Gishamer";
     require "../parts/head.php";
-    checkIfInitStartup();
 
     if(userIsLoggedIn()){
         header("Location: /index.php");
