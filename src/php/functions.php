@@ -87,7 +87,8 @@ function checkIfInitStartup(){
 function createtUser($username, $password, $sec_question, $sec_answer){
     global $dbh;
     $username = strip_tags($username);
-    $password = strip_tags($password);
+    $password = password_hash($password, PASSWORD_BCRYPT); //encrypt the password before saving in the database
+    // ^ on login, check via password_verify($login_form_pass, db_pass);
     $sec_question = strip_tags($sec_question);
     $sec_answer = strip_tags($sec_answer);
     $email = filter_var(strtolower($email), FILTER_VALIDATE_EMAIL);
