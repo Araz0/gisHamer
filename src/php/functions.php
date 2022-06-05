@@ -17,6 +17,21 @@ function userIsLoggedIn(){
     return isset($_SESSION['USER']);
 }
 
+function checkIfInitStartup(){
+    //check if no users in db, then redirect to create user page
+    global $dbh;
+    $query = "SELECT * FROM users";
+    $sth = $dbh->prepare($query);
+    $sth->execute();
+    $users = $sth->fetchAll();
+    if (count((array)$users) < 1){ 
+        if (basename($_SERVER['PHP_SELF']) != "create_user.php") {
+            header('Location: /admin/create_user.php');
+            exit;
+        }
+    }
+}
+
 function makeStrUrlReady($string){
     $change_letters_from = ['ä','ö','ü',' '];
     $change_letters_to = ['ea','eo','eu','_'];
@@ -81,19 +96,6 @@ function createSubCategory($category_name, $parent_category_id) {
     $sth->bindParam('type', 'subcategory', PDO::PARAM_STR);
     $sth->bindParam('category_id', $parent_category_id, PDO::PARAM_INT);
     $sth->execute();
-}
-
-function checkIfInitStartup(){
-    //check if no users in db, then redirect to create user page
-    global $dbh;
-    $query = "SELECT * FROM users";
-    $sth = $dbh->prepare($query);
-    $sth->execute();
-    $result = $sth->fetchAll();
-    if (count((array)$result) < 1){ 
-        header('Location: admin/create_user.php');
-        exit;
-    }
 }
 
 function createtUser($username, $password, $sec_question, $sec_answer){
