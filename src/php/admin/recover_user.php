@@ -8,6 +8,7 @@
     if(userIsLoggedIn()){
         header("Location: /index.php");
     }
+    
     $conformedToRecover = false;
     if (isset($_POST['recover_user'])) {
         $user_username = $_POST['user_username'];

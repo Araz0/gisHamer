@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <?php 
+    $pagetitle = "Create Sub Category | Gishamer";
+    require "../parts/head.php";
+    
     if(!userIsLoggedIn()){
         header("Location: /admin/login.php");
     }
-    $pagetitle = "Create Sub Category | Gishamer";
-    require "../parts/head.php";
-
 
     if (isset($_POST['create_sub_category'])) {
         $category_name = $_POST['category_name'];

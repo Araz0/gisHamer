@@ -2,11 +2,12 @@
 <html lang="de">
 
 <?php 
+    $pagetitle = "Admin | Gishamer";
+    require "../parts/head.php";
+    
     if(!userIsLoggedIn()){
         header("Location: /admin/login.php");
     }
-    $pagetitle = "Admin | Gishamer";
-    require "../parts/head.php";
     
 ?>
 

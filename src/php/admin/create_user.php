@@ -4,12 +4,13 @@
 <?php 
     // if a normal user trys to create an admin account
     // allow only logged in admins to create an account OR if its Init phase
+    
+    $pagetitle = "Create User | Gishamer";
+    require "../parts/head.php";
+    
     if(!userIsLoggedIn() && dbHasUsers()){
         header("Location: /admin/login.php");
     }
-
-    $pagetitle = "Create User | Gishamer";
-    require "../parts/head.php";
 
     if (isset($_POST['create_user'])) {
         $user_username = $_POST['user_username'];
