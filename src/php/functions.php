@@ -31,6 +31,19 @@ function checkIfInitStartup(){
         }
     }
 }
+function dbHasUsers(){
+    //check if no users in db
+    global $dbh;
+    $query = "SELECT * FROM users";
+    $sth = $dbh->prepare($query);
+    $sth->execute();
+    $users = $sth->fetchAll();
+    if (count((array)$users) < 1){ 
+        return false;
+    }else {
+        return true;
+    }
+}
 
 function makeStrUrlReady($string){
     $change_letters_from = ['ä','ö','ü',' '];
@@ -121,4 +134,15 @@ function getUser($username){
     $sth = $dbh->prepare($query);
     $sth->execute(array($username));
     return $sth->fetch();
+}
+function updateUserPassword($user_id, $password){
+    global $dbh;
+    $password = password_hash($password, PASSWORD_BCRYPT); //encrypt the password before saving in the database
+    // ^ on login, check via password_verify($login_form_pass, db_pass);
+
+    $query = "UPDATE users SET password=:password WHERE id=:id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('password', $password, PDO::PARAM_STR);
+    $sth->bindParam('id', $user_id, PDO::PARAM_INT);
+    $sth->execute();
 }
