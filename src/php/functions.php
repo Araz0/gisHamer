@@ -3,7 +3,9 @@ require 'config.php';
 $sufixRegex = "/^([a-zA-Z0-9]+([_-]?[a-zA-Z0-9])*){3,64}$/";
 $usernameRegex = "/^([a-z0-9A-Z.-_]*)$/";
 $errors = array();
-$storage_folder = "images";
+$storage_folder = "storage";
+$thumbnail_fallback = "/media/thumbnail_fallback.jpg";
+$icon_fallback = "/media/icon_fallback.jpg";
 
 $sec_questions = array(
     "What city were you born in?",
@@ -62,7 +64,7 @@ function makeStrUrlReady($string){
     return preg_replace("/[^a-zA-Z0-9_]/", "", $string);
 }
 
-function fileUpload($_inputArray, $_uploadFolder, $_allowedExtentions){
+function uploadToStorage($_allowedExtentions, $_uploadFolder, $_inputArray){
     $errors = [];
     if (isset($_inputArray)) {
 
@@ -85,12 +87,12 @@ function fileUpload($_inputArray, $_uploadFolder, $_allowedExtentions){
 
         if (empty($errors)) {
             if (move_uploaded_file($fileTmpName, $uploadFilePath)) {
-                //echo $filename." 🚀🚀🚀🚀🚀 \n";
+                //🚀🚀🚀🚀🚀
                 $localFilePath = "/$_uploadFolder/$localFileName";
-                
                 return $localFilePath;
             } else {
-                echo $filename . "❌❌❌❌❌ \n";
+                //❌❌❌❌❌
+                return -1; 
             }
         } else {
             return null;
@@ -99,27 +101,28 @@ function fileUpload($_inputArray, $_uploadFolder, $_allowedExtentions){
         return null;
     }
 }
-
-function createMainCategory($main_category_name, $main_category_icon) {
+function createCategory($category_name, $category_icon, $category_type, $parent_category_id = -1){
     global $dbh;
-    $query = "INSERT INTO categories (title, icon, type) VALUES (:title, :icon, :type)";
-    $sth = $dbh->prepare($query);
-    $sth->bindParam('title', $main_category_name, PDO::PARAM_STR);
-    $sth->bindParam('icon', $main_category_icon, PDO::PARAM_STR);
-    $sth->bindParam('type', 'maincategory', PDO::PARAM_STR);
-    $sth->execute();
-}
+    $query = "";
+    if ($category_type == "main_category") {
+        $query = "INSERT INTO categories (title, icon, type) VALUES (:title, :icon, :type)";
+    }else{
+        $query = "INSERT INTO categories (title, type, category_id) VALUES (:title, :type, :category_id)";
+    }
 
-function createSubCategory($category_name, $parent_category_id) {
-    global $dbh;
-    $query = "INSERT INTO categories (title, icon, type, category_id) VALUES (:title, :icon, :type, :category_id)";
     $sth = $dbh->prepare($query);
     $sth->bindParam('title', $category_name, PDO::PARAM_STR);
-    $sth->bindParam('icon', '', PDO::PARAM_STR);
-    $sth->bindParam('type', 'subcategory', PDO::PARAM_STR);
-    $sth->bindParam('category_id', $parent_category_id, PDO::PARAM_INT);
+    $sth->bindParam('type', $category_type, PDO::PARAM_STR);
+
+    if ($category_type == "main_category") {
+        $sth->bindParam('icon', $category_icon, PDO::PARAM_STR);
+    }else{
+        $sth->bindParam('category_id', $parent_category_id, PDO::PARAM_INT);
+    }
+
     $sth->execute();
 }
+
 
 function createtUser($username, $password, $sec_question, $sec_answer){
     global $dbh;

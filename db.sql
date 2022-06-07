@@ -20,7 +20,7 @@ CREATE TABLE news(
 CREATE TABLE categories(
     ID serial PRIMARY KEY NOT NULL,
     title VARCHAR(255) NOT NULL,
-    icon VARCHAR(255) NOT NULL,
+    icon VARCHAR(255),
     type VARCHAR(255) NOT NULL,
     category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
 );
