@@ -18,5 +18,7 @@
     <a href="/admin/create_sub_category.php">Kategorie erstellen</a>
     <br>
     <a href="/admin/create_user.php">Neue Admin Account erstellen</a>
+    <br>
+    <a href="/admin/news_post.php">Neue Eintrag erstellen</a>
 </body>
 </html>

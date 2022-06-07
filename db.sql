@@ -11,8 +11,10 @@ CREATE TABLE users(
 CREATE TABLE news(
     ID serial PRIMARY KEY NOT NULL,
     title VARCHAR(255) NOT NULL,
+    thumbnail VARCHAR(255) NOT NULL,
     message TEXT NOT NULL,
-    posting_date DATE NOT NULL DEFAULT CURRENT_DATE
+    create_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    edit_date DATE
 );
 
 CREATE TABLE categories(
