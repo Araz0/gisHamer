@@ -6,26 +6,25 @@
     require "../parts/head.php";
     
     allowAdminOnly();
-
+    
+    $news_id = $_GET['nid'] ? $_GET['nid'] : null;
+    $thumbnail_input = "news_thumbnail";
     $news_title = "";
     $_eintrags_thumbnail = "/media/news_thumbnail.jpg";
     $news_message = "";
 
     if (isset($_POST['create_news'])) {
         $news_title = $_POST['news_title'];
-        $_inputName = "news_thumbnail";
-        $input_array = array(basename($_FILES[$_inputName]['name']), $_FILES[$_inputName]['tmp_name'], $_FILES[$_inputName]['size'], $_FILES[$_inputName]['type'], $_FILES[$_inputName]['error']);
         $news_message = $_POST['news_text'];
+        
+        $news_thumbnail = uploadToStorage(array('jpeg','jpg','png'), $storage_folder, array(basename($_FILES[$thumbnail_input]['name']), $_FILES[$thumbnail_input]['tmp_name'], $_FILES[$thumbnail_input]['size'], $_FILES[$thumbnail_input]['type'], $_FILES[$thumbnail_input]['error']));
+        if ($news_thumbnail == null || $news_thumbnail == -1) { /*echo implode("\n ",$errors); exit();*/ $news_thumbnail = $_eintrags_thumbnail; }
 
         if (empty($errors)) {
-            echo $news_title;
-            echo $_eintrags_thumbnail;
-            echo $news_message;
-            createNews($news_title, $_eintrags_thumbnail, $news_message);
-            //header("Location: /");
+            createNews($news_title, $news_thumbnail, $news_message);
+            header("Location: /");
         }
     }
-    $news_id = $_GET['nid'];
     if (isset($news_id)) {
         $news_post = getNews($news_id);
         if ($news_post->id != $news_id){
@@ -35,15 +34,16 @@
         $news_title = $news_post->title;
         $_eintrags_thumbnail = $news_post->thumbnail;
         $news_message = $news_post->message;
-
-        
     }
     if (isset($_POST['update_news'])) {
         $news_title = $_POST['news_title'];
-        $news_thumbnail = $_eintrags_thumbnail;
         $news_message = $_POST['news_text'];
+
+        $news_thumbnail = uploadToStorage(array('jpeg','jpg','png'), $storage_folder, array(basename($_FILES[$thumbnail_input]['name']), $_FILES[$thumbnail_input]['tmp_name'], $_FILES[$thumbnail_input]['size'], $_FILES[$thumbnail_input]['type'], $_FILES[$thumbnail_input]['error']));
+        if ($news_thumbnail == null || $news_thumbnail == -1) { /*echo implode("\n ",$errors); exit();*/ $news_thumbnail = $_eintrags_thumbnail; }
         
         if (empty($errors)) {
+            
             updateNews($news_id, $news_title, $news_thumbnail, $news_message);
         }
     }
