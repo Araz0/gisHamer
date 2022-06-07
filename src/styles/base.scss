@@ -48,7 +48,6 @@ h5 {
     line-height: 1.5;
 }
 
-
 h3 {
     font-size: var(--heading-h3);
 }
@@ -83,13 +82,20 @@ p {
 form {
     display: flex;
     flex-direction: column;
-
-    input[type=submit] {
-        margin-top: 1rem;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 0.5rem;
+    background-color: var(--darkgrey);
+    color: var(--white);
+    border-radius: 1rem;
+    a {
+        color: var(--white);
     }
 }
 
-input {
+input,
+select {
     width: 250px;
     border-radius: 10px;
     border: none;
@@ -97,15 +103,23 @@ input {
     font-weight: 400;
 }
 
-input[type=text] {
-    padding: 0.8em 1.8rem;
+input[type="text"],
+input[type="password"],
+select {
+    padding: 0.8em 1rem;
 }
 
-input[type=button],
-input[type=submit],
-input[type=reset] {
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
     cursor: pointer;
     padding: 0.8em 2rem;
+    margin-top: 1rem;
     background-color: var(--darkblue);
     color: var(--white);
+}
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: var(--darkbluelighter);
 }

@@ -1,8 +1,49 @@
 <?php
 require 'config.php';
-$sufixRegex = "/^([a-zA-Z0-9]+([_-]?[a-zA-Z0-9])*){3,64}$/"; 
+$sufixRegex = "/^([a-zA-Z0-9]+([_-]?[a-zA-Z0-9])*){3,64}$/";
+$usernameRegex = "/^([a-z0-9A-Z.-_]*)$/";
 $errors = array();
 $storage_folder = "images";
+
+$sec_questions = array(
+    "What city were you born in?",
+    "What is your oldest sibling's middle name?",
+    "What was the first concert you attended?",
+    "What was the make and model of your first car?",
+    "In what city or town did your parents meet?"
+);
+
+function userIsLoggedIn(){
+    return isset($_SESSION['USER']);
+}
+
+function checkIfInitStartup(){
+    //check if no users in db, then redirect to create user page
+    global $dbh;
+    $query = "SELECT * FROM users";
+    $sth = $dbh->prepare($query);
+    $sth->execute();
+    $users = $sth->fetchAll();
+    if (count((array)$users) < 1){ 
+        if (basename($_SERVER['PHP_SELF']) != "create_user.php") {
+            header('Location: /admin/create_user.php');
+            exit;
+        }
+    }
+}
+function dbHasUsers(){
+    //check if no users in db
+    global $dbh;
+    $query = "SELECT * FROM users";
+    $sth = $dbh->prepare($query);
+    $sth->execute();
+    $users = $sth->fetchAll();
+    if (count((array)$users) < 1){ 
+        return false;
+    }else {
+        return true;
+    }
+}
 
 function makeStrUrlReady($string){
     $change_letters_from = ['ä','ö','ü',' '];
@@ -67,5 +108,43 @@ function createSubCategory($category_name, $parent_category_id) {
     $sth->bindParam('icon', '', PDO::PARAM_STR);
     $sth->bindParam('type', 'subcategory', PDO::PARAM_STR);
     $sth->bindParam('category_id', $parent_category_id, PDO::PARAM_INT);
+    $sth->execute();
+}
+
+function createtUser($username, $password, $sec_question, $sec_answer){
+    global $dbh;
+    $username = strip_tags($username);
+    $password = password_hash($password, PASSWORD_BCRYPT); //encrypt the password before saving in the database
+    // ^ on login, check via password_verify($login_form_pass, db_pass);
+    $sec_question = strip_tags($sec_question);
+    $sec_answer = strip_tags($sec_answer);
+    $email = filter_var(strtolower($email), FILTER_VALIDATE_EMAIL);
+    $query = "INSERT INTO users (username, password, sec_question, sec_answer) VALUES (:username, :password, :sec_question, :sec_answer)";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('username', $username, PDO::PARAM_STR);
+    $sth->bindParam('password', $password, PDO::PARAM_STR);
+    $sth->bindParam('sec_question', $sec_question, PDO::PARAM_STR);
+    $sth->bindParam('sec_answer', $sec_answer, PDO::PARAM_STR);
+    $sth->execute();
+}
+function getUser($username){
+    global $dbh;
+    $username = strtolower($username);
+    $query = "SELECT * FROM users WHERE username=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($username));
+    return $sth->fetch();
+}
+function updateUserSecurity($user_id, $password, $sec_question, $sec_answer){
+    global $dbh;
+    $password = password_hash($password, PASSWORD_BCRYPT); //encrypt the password before saving in the database
+    // ^ on login, check via password_verify($login_form_pass, db_pass);
+
+    $query = "UPDATE users SET password=:password, sec_question=:sec_question, sec_answer=:sec_answer WHERE id=:id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('password', $password, PDO::PARAM_STR);
+    $sth->bindParam('sec_question', $sec_question, PDO::PARAM_STR);
+    $sth->bindParam('sec_answer', $sec_answer, PDO::PARAM_STR);
+    $sth->bindParam('id', $user_id, PDO::PARAM_INT);
     $sth->execute();
 }
