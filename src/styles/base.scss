@@ -120,6 +120,7 @@ input[type="reset"] {
     margin-top: 1rem;
     background-color: var(--darkblue);
     color: var(--white);
+    transition: background-color 200ms;
 }
 input[type="button"]:hover,
 input[type="submit"]:hover,
