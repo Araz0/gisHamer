@@ -2,15 +2,12 @@
 <html lang="de">
 
 <?php 
-    // if a normal user trys to create an admin account
-    // allow only logged in admins to create an account OR if its Init phase
-    
     $pagetitle = "Create User | Gishamer";
     require "../parts/head.php";
     
-    if(!userIsLoggedIn() && dbHasUsers()){
-        header("Location: /admin/login.php");
-    }
+    // if a normal user trys to create an admin account
+    // allow only logged in admins to create an account OR if its Init phase
+    allowAdminOnlyOrInitPhase();
 
     if (isset($_POST['create_user'])) {
         $user_username = $_POST['user_username'];
@@ -25,7 +22,7 @@
         }
         if (empty($errors)) {
             createtUser($user_username, $user_password_1, $sec_question, $sec_answer);
-            header("Location: /admin/login.php");
+            header("Location: /login.php");
         }
     }
     

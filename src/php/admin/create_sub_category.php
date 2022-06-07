@@ -13,7 +13,7 @@
         $parent_category_id = $_POST['parent_category_id'];
 
         if (empty($errors)) {
-            createSubCategory($category_name, $parent_category_id);
+            createCategory($category_name, null, "sub_category", $parent_category_id);
             header('Location: /');
         }
         

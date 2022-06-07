@@ -8,15 +8,16 @@
         header("Location: /admin/login.php");
     }
 
+    $icon_input = "main_category_icon";
+
     if (isset($_POST['create_main_category'])) {
         $main_category_name = $_POST['main_category_name'];
 
-        $_inputName = "main_category_icon";
-        $input_array = array(basename($_FILES[$_inputName]['name']), $_FILES[$_inputName]['tmp_name'], $_FILES[$_inputName]['size'], $_FILES[$_inputName]['type'], $_FILES[$_inputName]['error']);
-        $main_category_icon = fileUpload( $input_array, $storage_folder, array('jpeg','jpg','png','svg'));
-        if ($main_category_icon == null) { echo implode("\n ",$errors); exit(); }
+        $main_category_icon = uploadToStorage(array('jpeg','jpg','png', 'svg'), $storage_folder, array(basename($_FILES[$icon_input]['name']), $_FILES[$icon_input]['tmp_name'], $_FILES[$icon_input]['size'], $_FILES[$icon_input]['type'], $_FILES[$icon_input]['error']));
+        if ($main_category_icon == null || $main_category_icon == -1) { /*echo implode("\n ",$errors); exit();*/ $main_category_icon = $icon_fallback; }
+        
         if (empty($errors)) {
-            createMainCategory($main_category_name);
+            createCategory($main_category_name, $main_category_icon, "main_category");
             header('Location: /');
         }
         

@@ -3,7 +3,9 @@ require 'config.php';
 $sufixRegex = "/^([a-zA-Z0-9]+([_-]?[a-zA-Z0-9])*){3,64}$/";
 $usernameRegex = "/^([a-z0-9A-Z.-_]*)$/";
 $errors = array();
-$storage_folder = "images";
+$storage_folder = "storage";
+$thumbnail_fallback = "/media/thumbnail_fallback.jpg";
+$icon_fallback = "/media/icon_fallback.jpg";
 
 $sec_questions = array(
     "What city were you born in?",
@@ -15,6 +17,16 @@ $sec_questions = array(
 
 function userIsLoggedIn(){
     return isset($_SESSION['USER']);
+}
+function allowAdminOnly(){
+    if(!userIsLoggedIn()){
+        header("Location: /login.php");
+    }
+}
+function allowAdminOnlyOrInitPhase(){
+    if(!userIsLoggedIn() && dbHasUsers()){
+        header("Location: /login.php");
+    }
 }
 
 function checkIfInitStartup(){
@@ -52,7 +64,7 @@ function makeStrUrlReady($string){
     return preg_replace("/[^a-zA-Z0-9_]/", "", $string);
 }
 
-function fileUpload($_inputArray, $_uploadFolder, $_allowedExtentions){
+function uploadToStorage($_allowedExtentions, $_uploadFolder, $_inputArray){
     $errors = [];
     if (isset($_inputArray)) {
 
@@ -75,12 +87,12 @@ function fileUpload($_inputArray, $_uploadFolder, $_allowedExtentions){
 
         if (empty($errors)) {
             if (move_uploaded_file($fileTmpName, $uploadFilePath)) {
-                //echo $filename." 🚀🚀🚀🚀🚀 \n";
+                //🚀🚀🚀🚀🚀
                 $localFilePath = "/$_uploadFolder/$localFileName";
-                
                 return $localFilePath;
             } else {
-                echo $filename . "❌❌❌❌❌ \n";
+                //❌❌❌❌❌
+                return -1; 
             }
         } else {
             return null;
@@ -89,27 +101,28 @@ function fileUpload($_inputArray, $_uploadFolder, $_allowedExtentions){
         return null;
     }
 }
-
-function createMainCategory($main_category_name, $main_category_icon) {
+function createCategory($category_name, $category_icon, $category_type, $parent_category_id = -1){
     global $dbh;
-    $query = "INSERT INTO categories (title, icon, type) VALUES (:title, :icon, :type)";
-    $sth = $dbh->prepare($query);
-    $sth->bindParam('title', $main_category_name, PDO::PARAM_STR);
-    $sth->bindParam('icon', $main_category_icon, PDO::PARAM_STR);
-    $sth->bindParam('type', 'maincategory', PDO::PARAM_STR);
-    $sth->execute();
-}
+    $query = "";
+    if ($category_type == "main_category") {
+        $query = "INSERT INTO categories (title, icon, type) VALUES (:title, :icon, :type)";
+    }else{
+        $query = "INSERT INTO categories (title, type, category_id) VALUES (:title, :type, :category_id)";
+    }
 
-function createSubCategory($category_name, $parent_category_id) {
-    global $dbh;
-    $query = "INSERT INTO categories (title, icon, type, category_id) VALUES (:title, :icon, :type, :category_id)";
     $sth = $dbh->prepare($query);
     $sth->bindParam('title', $category_name, PDO::PARAM_STR);
-    $sth->bindParam('icon', '', PDO::PARAM_STR);
-    $sth->bindParam('type', 'subcategory', PDO::PARAM_STR);
-    $sth->bindParam('category_id', $parent_category_id, PDO::PARAM_INT);
+    $sth->bindParam('type', $category_type, PDO::PARAM_STR);
+
+    if ($category_type == "main_category") {
+        $sth->bindParam('icon', $category_icon, PDO::PARAM_STR);
+    }else{
+        $sth->bindParam('category_id', $parent_category_id, PDO::PARAM_INT);
+    }
+
     $sth->execute();
 }
+
 
 function createtUser($username, $password, $sec_question, $sec_answer){
     global $dbh;
@@ -146,5 +159,47 @@ function updateUserSecurity($user_id, $password, $sec_question, $sec_answer){
     $sth->bindParam('sec_question', $sec_question, PDO::PARAM_STR);
     $sth->bindParam('sec_answer', $sec_answer, PDO::PARAM_STR);
     $sth->bindParam('id', $user_id, PDO::PARAM_INT);
+    $sth->execute();
+}
+
+function createNews($title, $thumbnail, $message){
+    global $dbh;
+    $title = strip_tags($title);
+    $message = strip_tags($message);
+
+    $query = "INSERT INTO news (title, message, thumbnail) VALUES (:title, :message, :thumbnail)";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('title', $title, PDO::PARAM_STR);
+    $sth->bindParam('thumbnail', $thumbnail, PDO::PARAM_STR);
+    $sth->bindParam('message', $message, PDO::PARAM_STR);
+    $sth->execute();
+}
+function getNews($news_id){
+    global $dbh;
+    $query = "SELECT * FROM news WHERE id=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($news_id));
+    return $sth->fetch();
+}
+function updateNews($news_id, $title, $thumbnail, $message){
+    global $dbh;
+    $title = strip_tags($title);
+    $message = strip_tags($message);
+    $dateNow = date('Y-m-d H:i:s');
+
+    $query = "UPDATE news SET title=:title, message=:message, thumbnail=:thumbnail, edit_date=:edit_date WHERE id=:news_id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('title', $title, PDO::PARAM_STR);
+    $sth->bindParam('thumbnail', $thumbnail, PDO::PARAM_STR);
+    $sth->bindParam('message', $message, PDO::PARAM_STR);
+    $sth->bindParam('edit_date', $dateNow, PDO::PARAM_STR);
+    $sth->bindParam('news_id', $news_id, PDO::PARAM_INT);
+    $sth->execute();
+}
+function deleteNews($news_id){
+    global $dbh;
+    $query = "DELETE FROM news WHERE id=:news_id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('news_id', $news_id, PDO::PARAM_INT);
     $sth->execute();
 }
