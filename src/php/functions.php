@@ -16,6 +16,16 @@ $sec_questions = array(
 function userIsLoggedIn(){
     return isset($_SESSION['USER']);
 }
+function allowAdminOnly(){
+    if(!userIsLoggedIn()){
+        header("Location: /login.php");
+    }
+}
+function allowAdminOnlyOrInitPhase(){
+    if(!userIsLoggedIn() && dbHasUsers()){
+        header("Location: /login.php");
+    }
+}
 
 function checkIfInitStartup(){
     //check if no users in db, then redirect to create user page
@@ -146,5 +156,47 @@ function updateUserSecurity($user_id, $password, $sec_question, $sec_answer){
     $sth->bindParam('sec_question', $sec_question, PDO::PARAM_STR);
     $sth->bindParam('sec_answer', $sec_answer, PDO::PARAM_STR);
     $sth->bindParam('id', $user_id, PDO::PARAM_INT);
+    $sth->execute();
+}
+
+function createtNews($title, $thumbnail, $message){
+    global $dbh;
+    $title = strip_tags($title);
+    $message = strip_tags($message);
+
+    $query = "INSERT INTO news (title, message, thumbnail) VALUES (:title, :message, :thumbnail)";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('title', $title, PDO::PARAM_STR);
+    $sth->bindParam('thumbnail', $thumbnail, PDO::PARAM_STR);
+    $sth->bindParam('message', $message, PDO::PARAM_STR);
+    $sth->execute();
+}
+function getNews($news_id){
+    global $dbh;
+    $query = "SELECT * FROM news WHERE id=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($news_id));
+    return $sth->fetch();
+}
+function updatetNews($news_id, $title, $thumbnail, $message){
+    global $dbh;
+    $title = strip_tags($title);
+    $message = strip_tags($message);
+    $dateNow = date('Y-m-d H:i:s');
+
+    $query = "UPDATE news SET title=:title, message=:message, thumbnail=:thumbnail, edit_date=:edit_date WHERE id=:news_id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('title', $title, PDO::PARAM_STR);
+    $sth->bindParam('thumbnail', $thumbnail, PDO::PARAM_STR);
+    $sth->bindParam('message', $message, PDO::PARAM_STR);
+    $sth->bindParam('edit_date', $dateNow, PDO::PARAM_STR);
+    $sth->bindParam('news_id', $news_id, PDO::PARAM_INT);
+    $sth->execute();
+}
+function deleteNews($news_id){
+    global $dbh;
+    $query = "DELETE FROM news WHERE id=:news_id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('news_id', $news_id, PDO::PARAM_INT);
     $sth->execute();
 }
