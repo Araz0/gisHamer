@@ -21,7 +21,7 @@
             echo $news_title;
             echo $_eintrags_thumbnail;
             echo $news_message;
-            createtNews($news_title, $_eintrags_thumbnail, $news_message);
+            createNews($news_title, $_eintrags_thumbnail, $news_message);
             //header("Location: /");
         }
     }
@@ -44,7 +44,7 @@
         $news_message = $_POST['news_text'];
         
         if (empty($errors)) {
-            updatetNews($news_id, $news_title, $news_thumbnail, $news_message);
+            updateNews($news_id, $news_title, $news_thumbnail, $news_message);
         }
     }
     if (isset($_POST['delete_news'])) {

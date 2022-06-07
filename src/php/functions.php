@@ -159,7 +159,7 @@ function updateUserSecurity($user_id, $password, $sec_question, $sec_answer){
     $sth->execute();
 }
 
-function createtNews($title, $thumbnail, $message){
+function createNews($title, $thumbnail, $message){
     global $dbh;
     $title = strip_tags($title);
     $message = strip_tags($message);
@@ -178,7 +178,7 @@ function getNews($news_id){
     $sth->execute(array($news_id));
     return $sth->fetch();
 }
-function updatetNews($news_id, $title, $thumbnail, $message){
+function updateNews($news_id, $title, $thumbnail, $message){
     global $dbh;
     $title = strip_tags($title);
     $message = strip_tags($message);
