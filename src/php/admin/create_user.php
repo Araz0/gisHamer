@@ -41,7 +41,7 @@
                 <input type="text" id="user_username" name="user_username" placeholder="Username der User" pattern="<?php echo substr($usernameRegex, 1, -1); ?>" required>
             </label>
             
-            <label for="user_password_2"><b>Password</b><br>
+            <label for="user_password_2"><b>New Password</b><br>
                 <input type="password" id="user_password_2" name="user_password_2" placeholder="Password der User" required>
             </label>
 
