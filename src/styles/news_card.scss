@@ -17,6 +17,9 @@
             display: flex;
             justify-content: space-between;
         }
+        &__text{
+            white-space: pre-line;
+        }
         &__actions {
             margin-top: auto;
             display: flex;
