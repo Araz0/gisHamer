@@ -44,8 +44,9 @@
         if ($news_thumbnail == null || $news_thumbnail == -1) { /*echo implode("\n ",$errors); exit();*/ $news_thumbnail = $_eintrags_thumbnail; }
         
         if (empty($errors)) {
-            
             updateNews($news_id, $news_title, $news_thumbnail, $news_message);
+            header("Location: /");
+            die();
         }
     }
     if (isset($_POST['delete_news'])) {
@@ -62,7 +63,7 @@
     <h1>Eintrag <?php echo isset($news_id) ? 'bearbeiten' : 'erstellen';?></h1>
     <section>
         <?php include('../parts/popups.php'); ?>
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data" <?php if (isset($news_id)) { ?>onsubmit="return confirm('Are you sure about this change?');"<?php } ?>>
             <label for="news_title"><b>Title</b><br>
                 <input type="text" id="news_title" name="news_title" placeholder="Title des Eintrags" value="<?php echo $news_title; ?>" required>
             </label>
