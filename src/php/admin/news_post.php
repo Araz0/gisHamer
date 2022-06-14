@@ -9,6 +9,7 @@
     
     $news_id = $_GET['nid'] ? $_GET['nid'] : null;
     $thumbnail_input = "news_thumbnail";
+    $_eintrags_thumbnail = "/media/thumbnail_fallback.jpg";
     $news_title = "";
     
     $news_message = "";
