@@ -9,18 +9,17 @@
     }
 
     $icon_input = "main_category_icon";
+    $icon_fallback = "/media/icon_fallback.png";
 
     if (isset($_POST['create_main_category'])) {
         $main_category_name = $_POST['main_category_name'];
-
         $main_category_icon = uploadToStorage(array('jpeg','jpg','png', 'svg'), $storage_folder, array(basename($_FILES[$icon_input]['name']), $_FILES[$icon_input]['tmp_name'], $_FILES[$icon_input]['size'], $_FILES[$icon_input]['type'], $_FILES[$icon_input]['error']));
-        if ($main_category_icon == null || $main_category_icon == -1) { /*echo implode("\n ",$errors); exit();*/ $main_category_icon = $icon_fallback; }
+        if ($main_category_icon == null || $main_category_icon == -1) { $main_category_icon = $icon_fallback; }
         
         if (empty($errors)) {
             createCategory($main_category_name, $main_category_icon, "main_category");
             header('Location: /');
         }
-        
     }
 ?>
 
@@ -34,7 +33,8 @@
             </label>
             
             <label for="main_category_icon"><b>Icon</b><br>
-                <input type="file" name="main_category_icon" id="main_category_icon" max-size="1000" accept="image/*,.jpg" required>
+                <img class="form_tumbnail_icon" src="<?php echo $icon_fallback; ?>" alt="News Post Thumbnail Image"><br>
+                <input type="file" name="main_category_icon" id="main_category_icon" max-size="1000" accept="image/*,.jpg">
             </label>
 
             <input type="submit" value='Speichern' name='create_main_category'>

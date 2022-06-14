@@ -123,6 +123,15 @@ function createCategory($category_name, $category_icon, $category_type, $parent_
     $sth->execute();
 }
 
+function getMainCategories(){
+    global $dbh;
+    $category = 'main_category';
+    $query = "SELECT * FROM categories WHERE type=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($category));
+    return $sth->fetchAll();
+}
+
 
 function createtUser($username, $password, $sec_question, $sec_answer){
     global $dbh;
