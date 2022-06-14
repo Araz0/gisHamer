@@ -13,6 +13,16 @@
     </section>
     <section class="section-news">
         <h1>News</h1>
+        <div class="section-news__container">
+        <?php 
+            $all_news = getAllNews();
+            if (count($all_news) > 0) {
+                foreach ($all_news as $i => $news_post) {
+                    include 'parts/news_post.php';
+                }
+            }
+        ?>
+        </div>
     </section>
 </body>
 </html>

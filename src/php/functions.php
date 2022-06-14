@@ -203,3 +203,10 @@ function deleteNews($news_id){
     $sth->bindParam('news_id', $news_id, PDO::PARAM_INT);
     $sth->execute();
 }
+function getAllNews(){
+    global $dbh;
+    $query = "SELECT * FROM news";
+    $sth = $dbh->prepare($query);
+    $sth->execute();
+    return $sth->fetchAll();
+}
