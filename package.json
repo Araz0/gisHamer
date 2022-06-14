@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "sudo service apache2 start && sudo service postgresql start",
+    "stop": "sudo service apache2 stop && sudo service postgresql stop",
     "build:php": "rsync -avrc --delete --exclude storage ./src/php/ ./public/",
     "build:sass": "sass ./src/styles/index.scss ./public/style.css",
     "build:js": "esbuild ./src/js/index.js --bundle --outfile=./public/js/script.js",

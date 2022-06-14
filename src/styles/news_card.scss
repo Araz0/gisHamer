@@ -1,11 +1,11 @@
 .section-news__container {
     display: grid;
+    width: 80%;
     margin: 0 auto;
     gap: 2rem;
 }
 .news-card {
     display: flex;
-    max-width: 78rem;
     border-left: 8px solid var(--red);
     &__context {
         display: flex;
@@ -17,7 +17,7 @@
             display: flex;
             justify-content: space-between;
         }
-        &__text{
+        &__text {
             white-space: pre-line;
         }
         &__actions {
@@ -45,6 +45,8 @@
         height: 16rem;
         width: 24rem;
         object-fit: cover;
+        border: 5px solid white;
+        border-radius: 0rem 5px 5px 0rem;
     }
 }
 .news-card__actions__edit:hover {

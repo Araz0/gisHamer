@@ -214,7 +214,7 @@ function deleteNews($news_id){
 }
 function getAllNews(){
     global $dbh;
-    $query = "SELECT * FROM news";
+    $query = "SELECT * FROM news ORDER BY create_date DESC";
     $sth = $dbh->prepare($query);
     $sth->execute();
     return $sth->fetchAll();
