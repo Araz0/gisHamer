@@ -89,6 +89,7 @@ form {
     background-color: var(--darkgrey);
     color: var(--white);
     border-radius: 1rem;
+
     a {
         color: var(--white);
     }
@@ -103,6 +104,10 @@ textarea,
     border: none;
     font-size: 1rem;
     font-weight: 400;
+}
+
+.form_tumbnail_icon {
+    width: 50px;
 }
 
 input[type="text"],
@@ -122,14 +127,17 @@ input[type="reset"] {
     color: var(--white);
     transition: background-color 200ms;
 }
+
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
     background-color: var(--darkbluelighter);
 }
+
 input[value="Löschen"] {
     background-color: var(--red);
 }
+
 input[value="Löschen"]:hover {
     background-color: var(--redlighter);
 }
