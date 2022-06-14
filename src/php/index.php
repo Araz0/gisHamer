@@ -17,7 +17,7 @@
                 if (count($main_categories) > 0) {
                     foreach ($main_categories as $i => $category) {
                 ?>
-                    <a class="section-top__categories__entry" href="/">
+                    <a class="section-top__categories__entry" href="<?php echo "/category/".$category->id; ?>">
                         <img class="category_icon" src="<?php echo $category->icon; ?>" alt="Main Category Icon">
                         <p><?php echo "$category->title"; ?></p>
 
