@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteRule ^(index|contact|login|register|create)$ $1.php
+RewriteRule ^([0-9]+)$ category.php?cid=$1
