@@ -140,7 +140,6 @@ function createtUser($username, $password, $sec_question, $sec_answer){
     // ^ on login, check via password_verify($login_form_pass, db_pass);
     $sec_question = strip_tags($sec_question);
     $sec_answer = strip_tags($sec_answer);
-    $email = filter_var(strtolower($email), FILTER_VALIDATE_EMAIL);
     $query = "INSERT INTO users (username, password, sec_question, sec_answer) VALUES (:username, :password, :sec_question, :sec_answer)";
     $sth = $dbh->prepare($query);
     $sth->bindParam('username', $username, PDO::PARAM_STR);
