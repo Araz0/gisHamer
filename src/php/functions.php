@@ -252,3 +252,11 @@ function getEntriesByCategoryId($category_id)
     $sth->execute(array($category_id));
     return $sth->fetchAll();
 }
+function getSubCategoriesByCategoryId($category_id)
+{
+    global $dbh;
+    $query = "SELECT * FROM categories WHERE category_id=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($category_id));
+    return $sth->fetchAll();
+}
