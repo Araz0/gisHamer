@@ -79,6 +79,9 @@ p {
     line-height: 1.4rem;
 }
 
+li {
+    list-style-type: none;
+}
 form {
     display: flex;
     flex-direction: column;
