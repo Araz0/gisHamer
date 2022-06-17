@@ -218,3 +218,18 @@ function getAllNews(){
     $sth->execute();
     return $sth->fetchAll();
 }
+
+function getCategoryById($category_id){
+    global $dbh;
+    $query = "SELECT * FROM categories WHERE id=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($category_id));
+    return $sth->fetch();
+}
+function getEntriesByCategoryId($category_id){
+    global $dbh;
+    $query = "SELECT * FROM entries WHERE category_id=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($category_id));
+    return $sth->fetchAll();
+}
