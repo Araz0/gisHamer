@@ -38,26 +38,25 @@ function printCategory($category)
                 }
             }
             ?>
-            </ul>
-        <?php
+        </ul>
+<?php
     }
 }
+?>
 
-        ?>
+<body>
+    <?php require "parts/nav.php"; ?>
+    <section>
+        <h1><?php echo $category->title; ?></h1>
 
-        <body>
-            <?php require "parts/nav.php"; ?>
-            <section>
-                <h1><?php echo $category->title; ?></h1>
-                
-                
-                <ul class="tree">
-                <?php
-                    printCategory($category);
-                ?>
-                    
-                </ul>
-            </section>
-        </body>
+
+        <ul class="tree">
+            <?php
+            printCategory($category);
+            ?>
+
+        </ul>
+    </section>
+</body>
 
 </html>
