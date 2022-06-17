@@ -34,3 +34,17 @@ CREATE TABLE entries(
     thumbnail VARCHAR(255),
     category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
 );
+
+/* some seed for entries */
+
+INSERT INTO entries(title, link, info, color, thumbnail, category_id) 
+VALUES ('entry 1', 'http://gishamer.localhost/category/1', 'some info here 1', 'fff', '/media/thumbnail_fallback.jpg', 1);
+
+INSERT INTO entries(title, link, info, color, thumbnail, category_id) 
+VALUES ('entry 2', 'http://gishamer.localhost/category/1', 'some info here 2', 'fff', '/media/thumbnail_fallback.jpg', 2);
+
+INSERT INTO entries(title, link, info, color, thumbnail, category_id) 
+VALUES ('entry 4', 'http://gishamer.localhost/category/1', 'some info here 4', 'fff', '/media/thumbnail_fallback.jpg', 2);
+
+INSERT INTO entries(title, link, info, color, thumbnail, category_id) 
+VALUES ('entry 3', 'http://gishamer.localhost/category/1', 'some info here 3', 'fff', '/media/thumbnail_fallback.jpg', 3);
