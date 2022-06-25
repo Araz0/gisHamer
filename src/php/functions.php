@@ -131,6 +131,27 @@ function createCategory($category_name, $category_icon, $category_type, $parent_
     $sth->execute();
 }
 
+function deleteCategory($category_id)
+{
+    global $dbh;
+    $query = "DELETE FROM categories WHERE id=:category_id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('category_id', $category_id, PDO::PARAM_INT);
+    $sth->execute();
+}
+
+function updateCategory($category_id, $title)
+{
+    global $dbh;
+    $title = strip_tags($title);
+
+    $query = "UPDATE categories SET title=:title WHERE id=:category_id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('title', $title, PDO::PARAM_STR);
+    $sth->bindParam('category_id', $category_id, PDO::PARAM_INT);
+    $sth->execute();
+}
+
 function getMainCategories()
 {
     global $dbh;
@@ -227,6 +248,7 @@ function deleteNews($news_id)
     $sth->bindParam('news_id', $news_id, PDO::PARAM_INT);
     $sth->execute();
 }
+
 function getAllNews()
 {
     global $dbh;
