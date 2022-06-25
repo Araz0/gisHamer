@@ -11,5 +11,5 @@
     
     <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="../../media/favicon.ico">
-    <title>Gishamer Intranet</title>
+    <title><?php echo $pagetitle; ?></title>
 </head>

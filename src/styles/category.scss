@@ -1,0 +1,177 @@
+/*big thanks to https://codepen.io/bisserof/pen/nrMveb for the core styling*/
+/* ————————————————————–
+    Tree core styles
+  */
+.tree {
+    margin: 1em;
+}
+
+.tree input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.tree input ~ ul {
+    display: none;
+}
+
+.tree input:checked ~ ul {
+    display: block;
+}
+
+/* ————————————————————–
+    Tree rows
+  */
+.tree li {
+    line-height: 1.2;
+    position: relative;
+    padding: 0 0 1em 1em;
+}
+
+.tree ul li {
+    padding: 1em 0 0 1em;
+}
+
+.tree > li:last-child {
+    padding-bottom: 0;
+}
+
+/* ————————————————————–
+    Tree labels
+  */
+.tree {
+    label {
+        background-color: var(--yellow);
+    }
+    span.tree_label::after {
+        width: 1.4rem;
+    }
+}
+.tree_label {
+    position: relative;
+    display: inline-block;
+    background-color: var(--lightgrey);
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+    width: 20rem;
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    img {
+        height:1.5rem;
+        margin: auto;
+        display: block;
+    }
+
+    &__actions {
+        margin-top: auto;
+        display: flex;
+        justify-content: end;
+        gap: 0.5rem;
+        form {
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+            button {
+                border-style: none;
+                background-color: transparent;
+                cursor: pointer;
+            }
+        }
+        form button svg,
+        a svg {
+            height: 22px;
+        }
+    }
+}
+
+label.tree_label {
+    cursor: pointer;
+}
+
+label.tree_label:hover {
+    color: #666;
+}
+
+/* ————————————————————–
+    Tree expanded icon
+  */
+label.tree_label:before {
+    content: "+";
+    position: relative;
+    background: var(--black);
+    color: var(--white);
+    margin: -0.2rem 1em 0 -3em;
+    z-index: 1;
+    float: left;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    text-align: center;
+    line-height: 0.9em;
+}
+
+:checked ~ label.tree_label:before {
+    content: "–";
+}
+
+/* ————————————————————–
+    Tree branches
+  */
+.tree li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: -1.5rem;
+    left: -0.5em;
+    display: block;
+    width: 0;
+    border-left: 1px solid #777;
+}
+
+.tree_label:after {
+    position: absolute;
+    top: 0;
+    left: -1.5em;
+    display: block;
+    height: 0.8em;
+    width: 1em;
+    border-bottom: 1px solid #777;
+    border-left: 1px solid #777;
+    border-radius: 0 0 0 0.3em;
+    content: "";
+}
+
+label.tree_label:after {
+    border-bottom: 0;
+}
+
+:checked ~ label.tree_label:after {
+    border-radius: 0 0.3em 0 0;
+    border-top: 1px solid #777;
+    border-right: 1px solid #777;
+    border-bottom: 0;
+    border-left: 0;
+    bottom: 0;
+    top: 0.5em;
+    height: auto;
+}
+
+.tree li:last-child:before {
+    height: 1em;
+    bottom: auto;
+}
+
+.tree > li:last-child:before {
+    display: none;
+}
+
+.tree_custom {
+    display: block;
+    background: #eee;
+    padding: 1em;
+    border-radius: 0.3em;
+}
