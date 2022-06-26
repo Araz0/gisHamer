@@ -3,11 +3,11 @@
     Tree core styles
   */
 .tree {
-    margin: 1em;
+    margin: 1em 5%;
 }
 
 .tree input {
-    position: absolute;
+    display: none;
     clip: rect(0, 0, 0, 0);
 }
 
@@ -61,7 +61,7 @@
         justify-content: space-between;
     }
     img {
-        height:1.5rem;
+        height: 1.5rem;
         margin: auto;
         display: block;
     }
@@ -102,8 +102,8 @@ label.tree_label:hover {
 label.tree_label:before {
     content: "+";
     position: relative;
-    background: var(--black);
-    color: var(--white);
+    background: var(--white);
+    color: var(--black);
     margin: -0.2rem 1em 0 -3em;
     z-index: 1;
     float: left;
