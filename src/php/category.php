@@ -18,9 +18,10 @@ function printCategory($category)
         //get all entries and sub-categories of this category:
         $entries = getEntriesByCategoryId($category->id);
         $subCategories = getSubCategoriesByCategoryId($category->id);
+        
 ?>
         <!-- input and label for the current category to enable toggling view of children -->
-        <input type="checkbox" id="c<?php echo $category->id; ?>" />
+        <input type="checkbox" id="c<?php echo $category->id; ?>" <?php echo ($category->type == "main_category") ? 'checked="true"' : ''; ?>/>
         <label for="c<?php echo $category->id; ?>" class="tree_label">
             <div class="tree_label__actions">
                 <?php echo $category->title; ?>
