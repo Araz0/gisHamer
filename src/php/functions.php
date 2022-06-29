@@ -152,6 +152,19 @@ function updateCategory($category_id, $title)
     $sth->execute();
 }
 
+function updateMainCategory($title, $icon, $category_id)
+{
+    global $dbh;
+    $title = strip_tags($title);
+
+    $query = "UPDATE categories SET title=:title, icon=:icon WHERE id=:category_id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('title', $title, PDO::PARAM_STR);
+    $sth->bindParam('category_id', $category_id, PDO::PARAM_INT);
+    $sth->bindParam('icon', $icon, PDO::PARAM_STR);
+    $sth->execute();
+}
+
 function getMainCategories()
 {
     global $dbh;

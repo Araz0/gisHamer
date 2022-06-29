@@ -29,10 +29,10 @@ function printCategory($category)
                     if (userIsLoggedIn()) {
                 ?>
                 <div  class="tree_label__actions">
-                        <a href="/admin/manage_entry.php?mid=<?php echo $category_id; ?>&pid=<?php echo $category->id; ?>">
+                <a href="/admin/manage_entry.php?mid=<?php echo $category_id; ?>&pid=<?php echo $category->id; ?>">
                             <img src="/media/add.svg" alt="add"></img>
                         </a>
-                        <a href="/admin/manage_entry.php?cid=<?php echo  $category->id;?>">
+                        <a <?php echo ($category->type != "main_category") ? ('href="/admin/manage_entry.php?cid='.$category->id.'"') : ('href="/admin/create_main_category.php?cid='.$category->id.'"'); ?> >
                             <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16.2384 0.761602C15.7607 0.283902 15.1257 0.0212517 14.45 0.0212517C13.7742 0.0212517 13.1393 0.283902 12.6616 0.761602L1.82406 11.5991C1.77986 11.6433 1.74671 11.696 1.72546 11.7547L0.025459 16.4297C-0.030641 16.5852 0.00760902 16.7586 0.124059 16.8751C0.204809 16.9558 0.313609 16.9992 0.424959 16.9992C0.473409 16.9992 0.522709 16.9907 0.570309 16.9737L5.24531 15.2737C5.30396 15.2524 5.35666 15.2184 5.40086 15.1751L16.2384 4.33755C16.7161 3.85985 16.9787 3.2249 16.9787 2.54915C16.9787 1.8734 16.7161 1.23845 16.2384 0.760752V0.761602ZM4.86621 14.5078L1.13556 15.8644L2.49216 12.1338L11.9 2.72595L14.274 5.1L4.86621 14.5078ZM15.6366 3.7366L14.875 4.4982L12.5009 2.12415L13.2625 1.36255C13.5796 1.0455 14.0012 0.871252 14.4491 0.871252C14.8971 0.871252 15.3187 1.0455 15.6357 1.36255C15.9528 1.6796 16.127 2.1012 16.127 2.54915C16.127 2.9971 15.9528 3.4187 15.6357 3.73575L15.6366 3.7366Z" fill="#777777"/>
                             </svg>
