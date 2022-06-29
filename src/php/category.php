@@ -58,7 +58,8 @@ function printCategory($category)
             // 1):  if category has at least one entry or more, display them:
             if ($entries[0]->id) {
                 foreach ($entries as $entry) {
-                    echo '<li><span class="tree_label">'. $entry->title .'</span></li>';
+                    //TODO onclick dialog open and not directly open link
+                    echo '<li><a href="'. $entry->link .'" target="_blank"><span style="background:'. $entry->color .'"class="tree_label">'. $entry->title .'</span></a></li>';
                 }
             }
             // 2): if category has at least one sub-category or more, print recursively inside an <li> tag to keep it as an item of this category:
