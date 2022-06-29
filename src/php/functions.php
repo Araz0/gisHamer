@@ -219,3 +219,47 @@ function getAllNews(){
     $sth->execute();
     return $sth->fetchAll();
 }
+
+function createLinkEntry($title, $link, $info, $color, $thumbnail, $category_id)
+{
+    global $dbh;
+    $title = strip_tags($title);
+    $link = strip_tags($link);
+    $info = strip_tags($info);
+
+    $query = "INSERT INTO entries (title, link, info, color, thumbnail, category_id) VALUES (:title, :link, :info, :color, :thumbnail, :category_id)";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('title', $title, PDO::PARAM_STR);
+    $sth->bindParam('link', $link, PDO::PARAM_STR);
+    $sth->bindParam('info', $info, PDO::PARAM_STR);
+    $sth->bindParam('color', $color, PDO::PARAM_STR);
+    $sth->bindParam('thumbnail', $thumbnail, PDO::PARAM_STR);
+    $sth->bindParam('category_id', $category_id, PDO::PARAM_INT);
+    
+    $sth->execute();
+}
+
+function getCategoryById($category_id)
+{
+    global $dbh;
+    $query = "SELECT * FROM categories WHERE id=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($category_id));
+    return $sth->fetch();
+}
+function getEntriesByCategoryId($category_id)
+{
+    global $dbh;
+    $query = "SELECT * FROM entries WHERE category_id=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($category_id));
+    return $sth->fetchAll();
+}
+function getSubCategoriesByCategoryId($category_id)
+{
+    global $dbh;
+    $query = "SELECT * FROM categories WHERE category_id=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($category_id));
+    return $sth->fetchAll();
+}
