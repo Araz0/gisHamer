@@ -15,56 +15,63 @@ $sec_questions = array(
     "In what city or town did your parents meet?"
 );
 
-function userIsLoggedIn(){
+function userIsLoggedIn()
+{
     return isset($_SESSION['USER']);
 }
-function allowAdminOnly(){
-    if(!userIsLoggedIn()){
+function allowAdminOnly()
+{
+    if (!userIsLoggedIn()) {
         header("Location: /login.php");
     }
 }
-function allowAdminOnlyOrInitPhase(){
-    if(!userIsLoggedIn() && dbHasUsers()){
+function allowAdminOnlyOrInitPhase()
+{
+    if (!userIsLoggedIn() && dbHasUsers()) {
         header("Location: /login.php");
     }
 }
 
-function checkIfInitStartup(){
+function checkIfInitStartup()
+{
     //check if no users in db, then redirect to create user page
     global $dbh;
     $query = "SELECT * FROM users";
     $sth = $dbh->prepare($query);
     $sth->execute();
     $users = $sth->fetchAll();
-    if (count((array)$users) < 1){ 
+    if (count((array)$users) < 1) {
         if (basename($_SERVER['PHP_SELF']) != "create_user.php") {
             header('Location: /admin/create_user.php');
             exit;
         }
     }
 }
-function dbHasUsers(){
+function dbHasUsers()
+{
     //check if no users in db
     global $dbh;
     $query = "SELECT * FROM users";
     $sth = $dbh->prepare($query);
     $sth->execute();
     $users = $sth->fetchAll();
-    if (count((array)$users) < 1){ 
+    if (count((array)$users) < 1) {
         return false;
-    }else {
+    } else {
         return true;
     }
 }
 
-function makeStrUrlReady($string){
-    $change_letters_from = ['ä','ö','ü',' '];
-    $change_letters_to = ['ea','eo','eu','_'];
+function makeStrUrlReady($string)
+{
+    $change_letters_from = ['ä', 'ö', 'ü', ' '];
+    $change_letters_to = ['ea', 'eo', 'eu', '_'];
     $string = str_replace($change_letters_from, $change_letters_to, $string);
     return preg_replace("/[^a-zA-Z0-9_]/", "", $string);
 }
 
-function uploadToStorage($_allowedExtentions, $_uploadFolder, $_inputArray){
+function uploadToStorage($_allowedExtentions, $_uploadFolder, $_inputArray)
+{
     $errors = [];
     if (isset($_inputArray)) {
 
@@ -73,17 +80,17 @@ function uploadToStorage($_allowedExtentions, $_uploadFolder, $_inputArray){
         $fileSize = $_inputArray[2];
         $fileType = $_inputArray[3];
         $fileError = $_inputArray[4];
-        $fileExtension =strtolower(substr($filename, -3));
-        $localFileName = "A".md5($filename.$fileTmpName).".$fileExtension";
-        
+        $fileExtension = strtolower(substr($filename, -3));
+        $localFileName = "A" . md5($filename . $fileTmpName) . ".$fileExtension";
+
         if (!in_array($fileExtension, $_allowedExtentions)) {
-            array_push($errors, "file format must be one of the following: ".implode(" ",$_allowedExtentions));
+            array_push($errors, "file format must be one of the following: " . implode(" ", $_allowedExtentions));
         }
 
         if ($fileSize > 10000000) {
-            array_push($errors,"File exceeds maximum size (10MB)");
+            array_push($errors, "File exceeds maximum size (10MB)");
         }
-        $uploadFilePath = $_SERVER["DOCUMENT_ROOT"]."/$_uploadFolder/" . $localFileName;
+        $uploadFilePath = $_SERVER["DOCUMENT_ROOT"] . "/$_uploadFolder/" . $localFileName;
 
         if (empty($errors)) {
             if (move_uploaded_file($fileTmpName, $uploadFilePath)) {
@@ -92,21 +99,22 @@ function uploadToStorage($_allowedExtentions, $_uploadFolder, $_inputArray){
                 return $localFilePath;
             } else {
                 //❌❌❌❌❌
-                return -1; 
+                return -1;
             }
         } else {
             return null;
         }
-    }else{
+    } else {
         return null;
     }
 }
-function createCategory($category_name, $category_icon, $category_type, $parent_category_id = -1){
+function createCategory($category_name, $category_icon, $category_type, $parent_category_id = -1)
+{
     global $dbh;
     $query = "";
     if ($category_type == "main_category") {
         $query = "INSERT INTO categories (title, icon, type) VALUES (:title, :icon, :type)";
-    }else{
+    } else {
         $query = "INSERT INTO categories (title, type, category_id) VALUES (:title, :type, :category_id)";
     }
 
@@ -116,14 +124,36 @@ function createCategory($category_name, $category_icon, $category_type, $parent_
 
     if ($category_type == "main_category") {
         $sth->bindParam('icon', $category_icon, PDO::PARAM_STR);
-    }else{
+    } else {
         $sth->bindParam('category_id', $parent_category_id, PDO::PARAM_INT);
     }
 
     $sth->execute();
 }
 
-function getMainCategories(){
+function deleteCategory($category_id)
+{
+    global $dbh;
+    $query = "DELETE FROM categories WHERE id=:category_id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('category_id', $category_id, PDO::PARAM_INT);
+    $sth->execute();
+}
+
+function updateCategory($category_id, $title)
+{
+    global $dbh;
+    $title = strip_tags($title);
+
+    $query = "UPDATE categories SET title=:title WHERE id=:category_id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('title', $title, PDO::PARAM_STR);
+    $sth->bindParam('category_id', $category_id, PDO::PARAM_INT);
+    $sth->execute();
+}
+
+function getMainCategories()
+{
     global $dbh;
     $category = 'main_category';
     $query = "SELECT * FROM categories WHERE type=?";
@@ -133,14 +163,14 @@ function getMainCategories(){
 }
 
 
-function createtUser($username, $password, $sec_question, $sec_answer){
+function createtUser($username, $password, $sec_question, $sec_answer)
+{
     global $dbh;
     $username = strip_tags($username);
     $password = password_hash($password, PASSWORD_BCRYPT); //encrypt the password before saving in the database
     // ^ on login, check via password_verify($login_form_pass, db_pass);
     $sec_question = strip_tags($sec_question);
     $sec_answer = strip_tags($sec_answer);
-    $email = filter_var(strtolower($email), FILTER_VALIDATE_EMAIL);
     $query = "INSERT INTO users (username, password, sec_question, sec_answer) VALUES (:username, :password, :sec_question, :sec_answer)";
     $sth = $dbh->prepare($query);
     $sth->bindParam('username', $username, PDO::PARAM_STR);
@@ -149,7 +179,8 @@ function createtUser($username, $password, $sec_question, $sec_answer){
     $sth->bindParam('sec_answer', $sec_answer, PDO::PARAM_STR);
     $sth->execute();
 }
-function getUser($username){
+function getUser($username)
+{
     global $dbh;
     $username = strtolower($username);
     $query = "SELECT * FROM users WHERE username=?";
@@ -157,7 +188,8 @@ function getUser($username){
     $sth->execute(array($username));
     return $sth->fetch();
 }
-function updateUserSecurity($user_id, $password, $sec_question, $sec_answer){
+function updateUserSecurity($user_id, $password, $sec_question, $sec_answer)
+{
     global $dbh;
     $password = password_hash($password, PASSWORD_BCRYPT); //encrypt the password before saving in the database
     // ^ on login, check via password_verify($login_form_pass, db_pass);
@@ -171,7 +203,8 @@ function updateUserSecurity($user_id, $password, $sec_question, $sec_answer){
     $sth->execute();
 }
 
-function createNews($title, $thumbnail, $message){
+function createNews($title, $thumbnail, $message)
+{
     global $dbh;
     $title = strip_tags($title);
     $message = strip_tags($message);
@@ -183,14 +216,16 @@ function createNews($title, $thumbnail, $message){
     $sth->bindParam('message', $message, PDO::PARAM_STR);
     $sth->execute();
 }
-function getNews($news_id){
+function getNews($news_id)
+{
     global $dbh;
     $query = "SELECT * FROM news WHERE id=?";
     $sth = $dbh->prepare($query);
     $sth->execute(array($news_id));
     return $sth->fetch();
 }
-function updateNews($news_id, $title, $thumbnail, $message){
+function updateNews($news_id, $title, $thumbnail, $message)
+{
     global $dbh;
     $title = strip_tags($title);
     $message = strip_tags($message);
@@ -205,14 +240,17 @@ function updateNews($news_id, $title, $thumbnail, $message){
     $sth->bindParam('news_id', $news_id, PDO::PARAM_INT);
     $sth->execute();
 }
-function deleteNews($news_id){
+function deleteNews($news_id)
+{
     global $dbh;
     $query = "DELETE FROM news WHERE id=:news_id";
     $sth = $dbh->prepare($query);
     $sth->bindParam('news_id', $news_id, PDO::PARAM_INT);
     $sth->execute();
 }
-function getAllNews(){
+
+function getAllNews()
+{
     global $dbh;
     $query = "SELECT * FROM news ORDER BY create_date DESC";
     $sth = $dbh->prepare($query);

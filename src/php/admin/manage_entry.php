@@ -7,9 +7,8 @@
     if(!userIsLoggedIn()){
         header("Location: /admin/login.php");
     }
-    //icon fallback
+
     $_preview_image = "/media/thumbnail_fallback.jpg";
-    
     $image_input = "entry_thumbnail";
 
     //set when creating a new one
