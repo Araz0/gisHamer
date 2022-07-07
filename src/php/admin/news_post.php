@@ -89,6 +89,18 @@ if (isset($_POST['delete_news'])) {
             <?php } ?>
         </form>
     </section>
+    <script>
+        const thumbnailInput = document.getElementById('news_thumbnail');
+        thumbnailInput.addEventListener('change', () => {
+            if (thumbnailInput.files && thumbnailInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    document.getElementById('form_thumbnail').src = e.target.result;
+                }
+                reader.readAsDataURL(thumbnailInput.files[0]);
+            }
+        })
+    </script>
 </body>
 
 </html>
