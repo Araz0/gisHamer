@@ -4,9 +4,30 @@
     margin: 0 auto;
     gap: 2rem;
 }
+.admin-news {
+    padding: 0 10%;
+    &__mini-news {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
 .news-card {
     display: flex;
     border-left: 8px solid var(--red);
+    &-mini {
+        background-color: var(--white);
+        max-width: 44rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 2rem;
+        h2 {
+            font-size: var(--heading-h3);
+        }
+        .news-card__context__actions {
+            margin: auto 0;
+        }
+    }
     &__context {
         display: flex;
         flex-direction: column;
@@ -25,6 +46,8 @@
             display: flex;
             justify-content: end;
             gap: 0.5rem;
+            align-items: center;
+
             form {
                 padding: 0;
                 margin: 0;

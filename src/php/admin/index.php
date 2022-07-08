@@ -34,6 +34,19 @@ if (!userIsLoggedIn()) {
             </a>
         </div>
     </section>
+    <section class="admin-news">
+        <h2>News</h2>
+        <div class="admin-news__mini-news">
+            <?php
+            $all_news = getAllNews();
+            if (count($all_news) > 0) {
+                foreach ($all_news as $i => $news_post) {
+                    include '../parts/news_post-mini.php';
+                }
+            }
+
+            ?>
+    </section>
 </body>
 
 </html>
