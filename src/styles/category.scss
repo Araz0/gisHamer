@@ -71,7 +71,11 @@
         display: flex;
         justify-content: end;
         gap: 0.5rem;
+        a{
+            height: 24px;
+        }
         form {
+            height: 24px;
             padding: 0;
             margin: 0;
             background-color: transparent;
@@ -116,6 +120,9 @@ label.tree_label:before {
 
 :checked ~ label.tree_label:before {
     content: "–";
+}
+:checked ~ label.tree_label .tree_label__body {
+    border-bottom: 3px solid #fec;
 }
 
 /* ————————————————————–

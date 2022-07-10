@@ -23,7 +23,7 @@ function printCategory($category)
         <!-- input and label for the current category to enable toggling view of children -->
         <input type="checkbox" id="c<?php echo $category->id; ?>" <?php echo ($category->type == "main_category") ? 'checked="true"' : ''; ?>/>
         <label for="c<?php echo $category->id; ?>" class="tree_label">
-            <div class="tree_label__actions">
+            <div class="tree_label__body">
                 <?php echo $category->title; ?>
                 <?php 
                     if (userIsLoggedIn()) {

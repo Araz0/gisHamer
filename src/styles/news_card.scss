@@ -80,3 +80,14 @@
 .news-card__actions__remove:hover {
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
 }
+
+// media queries for tablets
+@media (max-width: 920px) {
+    .news-card {
+        flex-direction: column-reverse;
+        &__thumbnail {
+            width: 100%;
+            border-radius: 0rem 5px 0px 0rem;
+        }
+    }
+}
