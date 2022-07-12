@@ -54,6 +54,7 @@
 .tree_label {
     position: relative;
     display: inline-block;
+    /*Fallback color*/
     background-color: var(--lightgrey);
     padding: 0.2rem 1rem;
     border-radius: 5px;
