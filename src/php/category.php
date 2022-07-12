@@ -2,8 +2,9 @@
 <html lang="de">
 
 <?php
-$pagetitle = "Category " . $_GET["cid"] . " | Gishamer";
+$pagetitle = "Hauptkategorie ".$_GET["cid"]." | Gishamer";
 require "./parts/head.php";
+
 $category_id = $_GET["cid"];
 $maincategory = getCategoryById($category_id);
 if ($maincategory->id == null) { // check if enterd maincategory does not exists
