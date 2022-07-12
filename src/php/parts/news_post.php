@@ -1,4 +1,4 @@
-<artical class="news-card">
+<article class="news-card">
     <div class="news-card__context">
         <div class="news-card__context__header">
             <h2 class="news-card__context__header__title"><?php echo $news_post->title; ?></h2>
@@ -30,9 +30,7 @@
             <?php 
             }
             ?>
-            </div>
-        
-        
+        </div>
     </div>
     <img src="<?php echo $news_post->thumbnail; ?>" alt="new card thumbnail" class="news-card__thumbnail">
-</artical>
+</article>

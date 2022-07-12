@@ -40,9 +40,7 @@ if (!userIsLoggedIn()) {
                     include '../parts/news_post-mini.php';
                 }
             }
-
             ?>
     </section>
 </body>
-
 </html>

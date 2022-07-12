@@ -43,7 +43,7 @@ if (isset($_POST['update_news'])) {
     $news_message = $_POST['news_text'];
 
     $news_thumbnail = uploadToStorage(array('jpeg', 'jpg', 'png'), $storage_folder, array(basename($_FILES[$thumbnail_input]['name']), $_FILES[$thumbnail_input]['tmp_name'], $_FILES[$thumbnail_input]['size'], $_FILES[$thumbnail_input]['type'], $_FILES[$thumbnail_input]['error']));
-    if ($news_thumbnail == null || $news_thumbnail == -1) { /*echo implode("\n ",$errors); exit();*/
+    if ($news_thumbnail == null || $news_thumbnail == -1) {
         $news_thumbnail = $_eintrags_thumbnail;
     }
 
@@ -68,11 +68,11 @@ if (isset($_POST['delete_news'])) {
     <section>
         <?php include('../parts/popups.php'); ?>
         <form action="" method="post" enctype="multipart/form-data" <?php if (isset($news_id)) { ?>onsubmit="return confirm('Are you sure about this change?');" <?php } ?>>
-            <label for="news_title"><b>Title</b><br>
-                <input type="text" id="news_title" name="news_title" placeholder="Title des Eintrags" value="<?php echo $news_title; ?>" required>
+            <label for="news_title"><b>Titel</b><br>
+                <input type="text" id="news_title" name="news_title" placeholder="Titel des Eintrags" value="<?php echo $news_title; ?>" required>
             </label>
 
-            <label for="news_thumbnail"><b>Thumbnail</b><br>
+            <label for="news_thumbnail"><b>Bild</b><br>
                 <img class="form_thumbnail" id="form_thumbnail" src="<?php echo $_eintrags_thumbnail; ?>" alt="News Post Thumbnail Image"><br>
                 <input type="file" name="news_thumbnail" id="news_thumbnail" max-size="100000" accept="image/*,.jpg">
             </label>
@@ -102,5 +102,4 @@ if (isset($_POST['delete_news'])) {
         })
     </script>
 </body>
-
 </html>

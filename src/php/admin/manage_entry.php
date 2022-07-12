@@ -138,7 +138,7 @@
     <h1><?php echo (isset($category_id_edit) || isset($entry_id_edit)) ? 'Eintrag bearbeiten' : ('Neuer Eintrag in '.$maincategory->title)  ?></h1>
     <?php if (!isset($category_id_edit)) { ?><button onclick="toggleType()" id="toggle_type" class="toggle toggle--on"></button><?php } ?>
     <section id="create_category">
-        <form action="" method="post" enctype="multipart/form-data" <?php if (isset($category_id_edit)) { ?>onsubmit="return confirm('Are you sure about this change?');"<?php } ?>>
+        <form action="" method="post" enctype="multipart/form-data" <?php if (isset($category_id_edit)) { ?>onsubmit="return confirm('Willst du die Änderungen wirklich speichern?');"<?php } ?>>
             <input type="hidden" name="parent_category_id" value="<?php echo $category_id; ?>" id="parent_category_id" required>
             <label for="parent_category_name"><b>Parent-Kategorie</b><br>
                 <input readonly type="text" name="parent_category_name" value="<?php echo $parentcategory_title ?>" id="parent_category_name" required>
@@ -155,7 +155,7 @@
         </form>
     </section>
     <section id="create_entry" style="display:none;">
-        <form action="" method="post" enctype="multipart/form-data" <?php if (isset($entry_id_edit)) { ?>onsubmit="return confirm('Are you sure about this change?');"<?php } ?>>
+        <form action="" method="post" enctype="multipart/form-data" <?php if (isset($entry_id_edit)) { ?>onsubmit="return confirm('Willst du die Änderungen wirklich speichern?');"<?php } ?>>
             <input type="hidden" name="parent_category_id" value="<?php echo $category_id; ?>" id="parent_category_id" required>
             <label for="parent_category_name"><b>Parent-Kategorie</b><br>
                 <input readonly type="text" name="parent_category_name" value="<?php echo $parentcategory_title ?>" id="parent_category_name" required>
@@ -180,7 +180,7 @@
                 </datalist>
             </label>
             <label for="entry_thumbnail"><b>Vorschau Bild</b><br>
-                <img class="form_thumbnail" src="<?php echo $entry_thumbnail; ?>" alt="Preview Image"><br>
+                <img class="form_thumbnail" src="<?php echo $entry_thumbnail; ?>" alt="Vorschau Bild"><br>
                 <input type="file" name="entry_thumbnail" id="entry_thumbnail" max-size="100000" accept="image/*,.jpg">
             </label>
 
@@ -216,7 +216,7 @@
         }
     }
 
-            //get param from url
+        //get param from url
         //if param has eid --> remove style from create category and add style to crate entry
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -224,5 +224,4 @@
         if(entry){
             toggleType();
         }
-
 </script>

@@ -8,11 +8,11 @@ $thumbnail_fallback = "/media/thumbnail_fallback.jpg";
 $icon_fallback = "/media/icon_fallback.jpg";
 
 $sec_questions = array(
-    "What city were you born in?",
-    "What is your oldest sibling's middle name?",
-    "What was the first concert you attended?",
-    "What was the make and model of your first car?",
-    "In what city or town did your parents meet?"
+    "In welcher Stadt bist du geboren?",
+    "Was ist der Vorname von deinem ältesten Bruder/Schwester?",
+    "Was war das erste Konzert, dass du besucht hast?",
+    "Was war die Marke deines ersten Fahrzeugs?",
+    "In welcher Stadt haben sich deine Eltern kennengelernt?"
 );
 
 function userIsLoggedIn()
@@ -84,11 +84,11 @@ function uploadToStorage($_allowedExtentions, $_uploadFolder, $_inputArray)
         $localFileName = "A" . md5($filename . $fileTmpName) . ".$fileExtension";
 
         if (!in_array($fileExtension, $_allowedExtentions)) {
-            array_push($errors, "file format must be one of the following: " . implode(" ", $_allowedExtentions));
+            array_push($errors, "File Format muss eines der Folgenden sein: " . implode(" ", $_allowedExtentions));
         }
 
         if ($fileSize > 10000000) {
-            array_push($errors, "File exceeds maximum size (10MB)");
+            array_push($errors, "File zu groß, maximal 10MB");
         }
         $uploadFilePath = $_SERVER["DOCUMENT_ROOT"] . "/$_uploadFolder/" . $localFileName;
 

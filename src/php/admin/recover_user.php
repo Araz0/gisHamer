@@ -2,7 +2,7 @@
 <html lang="de">
 
 <?php 
-    $pagetitle = "Recover Password | Gishamer";
+    $pagetitle = "Password vergessen | Gishamer";
     require "../parts/head.php";
     
     if(userIsLoggedIn()){
@@ -18,7 +18,7 @@
         $user = getUser($user_username);
         $user_id = $user->id;
         if ($user->sec_question != $sec_question || $user->sec_answer != $sec_answer) {
-            array_push($errors, "The Information you provieded are incorrect!"); 
+            array_push($errors, "Die Antwort ist leider falsch!"); 
         }
 
         if (empty($errors)) {
@@ -35,7 +35,7 @@
         $sec_answer = $_POST['sec_answer'];
 
         if ($user_password_1 != $user_password_2) {
-            array_push($errors, "Both Password fields must mach eachother!");
+            array_push($errors, "Beide Passwörter müssen übereinstimmen!");
             $conformedToRecover = true;
         }
         
@@ -44,7 +44,6 @@
             header('Location: /admin/login.php');
         }
     }
-    
 ?>
 
 <body>
@@ -56,16 +55,16 @@
             
             <?php if ($conformedToRecover) { ?>
                 <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-                <label for="user_password_1"><b>New Password</b><br>
-                    <input type="password" id="user_password_1" name="user_password_1" placeholder="Password der User" required>
+                <label for="user_password_1"><b>Neues Passwort</b><br>
+                    <input type="password" id="user_password_1" name="user_password_1" placeholder="Passwort" required>
                 </label>
 
-                <label for="user_password_2"><b>Repeat Password</b><br>
-                    <input type="password" id="user_password_2" name="user_password_2" placeholder="Nochmal Password der User" required>
+                <label for="user_password_2"><b>Passwort wiederholen</b><br>
+                    <input type="password" id="user_password_2" name="user_password_2" placeholder="Passwort wiederholen" required>
                 </label>
             <?php }else{ ?>
                 <label for="user_username"><b>Username</b> (a-z0-9A-Z.-_)<br>
-                    <input type="text" id="user_username" name="user_username" placeholder="Username der User" pattern="<?php echo substr($usernameRegex, 1, -1); ?>" required>
+                    <input type="text" id="user_username" name="user_username" placeholder="Username" pattern="<?php echo substr($usernameRegex, 1, -1); ?>" required>
                 </label>
             <?php } ?>
                 
@@ -83,11 +82,10 @@
                 </label>
 
             <?php if ($conformedToRecover) { ?>
-                <input type="submit" value='Reset' name='reset_user'>
+                <input type="submit" value='Zurücksetzen' name='reset_user'>
             <?php }else{ ?>
-                <input type="submit" value='Submit' name='recover_user'>
+                <input type="submit" value='Speichern' name='recover_user'>
             <?php } ?>
-
         </form>
     </section>
 </body>
