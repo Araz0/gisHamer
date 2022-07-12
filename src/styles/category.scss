@@ -187,12 +187,13 @@ label.tree_label:after {
     padding: 1em;
     border-radius: 0.3em;
 }
-.tree span.tree_label::before {
+.tree div.tree_label::before {
     content: "";
     width: 5px;
-    height: 100%;
+    height: calc(103%);
+    border-radius: 5px;
     background-color: red;
     margin-left: -1rem;
     position: absolute;
-    margin-top: -3px;
+    margin-top: -4px;
 }
