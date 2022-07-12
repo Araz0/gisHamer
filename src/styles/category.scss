@@ -4,6 +4,10 @@
   */
 .tree {
     margin: 1em 5%;
+    max-width: fit-content;
+    ul {
+        max-width: fit-content;
+    }
 }
 
 .tree input {
@@ -71,7 +75,11 @@
         display: flex;
         justify-content: end;
         gap: 0.5rem;
+        a {
+            height: 24px;
+        }
         form {
+            height: 24px;
             padding: 0;
             margin: 0;
             background-color: transparent;
@@ -88,7 +96,7 @@
     }
 }
 
-label.tree_label {
+.tree_label {
     cursor: pointer;
 }
 
@@ -116,6 +124,9 @@ label.tree_label:before {
 
 :checked ~ label.tree_label:before {
     content: "–";
+}
+:checked ~ label.tree_label .tree_label__body {
+    border-bottom: 3px solid #fec;
 }
 
 /* ————————————————————–
@@ -174,4 +185,13 @@ label.tree_label:after {
     background: #eee;
     padding: 1em;
     border-radius: 0.3em;
+}
+.tree span.tree_label::before {
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: red;
+    margin-left: -1rem;
+    position: absolute;
+    margin-top: -3px;
 }
