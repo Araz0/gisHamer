@@ -290,6 +290,43 @@ function createLinkEntry($title, $link, $info, $color, $thumbnail, $category_id)
     $sth->execute();
 }
 
+function getLinkEntryById($entry_id)
+{
+    global $dbh;
+    $query = "SELECT * FROM entries WHERE id=?";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array($entry_id));
+    return $sth->fetch();
+}
+
+function updateLinkEntry($title, $link, $info, $color, $thumbnail, $id)
+{
+    global $dbh;
+    $title = strip_tags($title);
+    $link = strip_tags($link);
+    $text = strip_tags($text);
+    $color = strip_tags($color);
+
+    $query = "UPDATE entries SET title=:title, link=:link, info=:info, color=:color, thumbnail=:thumbnail  WHERE id=:id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('title', $title, PDO::PARAM_STR);
+    $sth->bindParam('link', $link, PDO::PARAM_STR);
+    $sth->bindParam('info', $info, PDO::PARAM_STR);
+    $sth->bindParam('color', $color, PDO::PARAM_STR);
+    $sth->bindParam('thumbnail', $thumbnail, PDO::PARAM_STR);
+    $sth->bindParam('id', $id, PDO::PARAM_INT);
+    $sth->execute();
+}
+
+function deleteLinkEntry($entry_id)
+{
+    global $dbh;
+    $query = "DELETE FROM entries WHERE id=:entry_id";
+    $sth = $dbh->prepare($query);
+    $sth->bindParam('entry_id', $entry_id, PDO::PARAM_INT);
+    $sth->execute();
+}
+
 function getCategoryById($category_id)
 {
     global $dbh;
