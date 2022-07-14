@@ -123,7 +123,7 @@ function printCategory($category)
         function deleteDialog(e) {
             if (e.classList.contains("dialog__container__close")) {
                 e.parentElement.parentElement.remove();
-            } else {
+            } else if (e.classList.contains("dialog")) {
                 e.remove();
             }
         }
