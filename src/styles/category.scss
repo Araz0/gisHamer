@@ -126,9 +126,9 @@ label.tree_label:before {
 :checked ~ label.tree_label:before {
     content: "–";
 }
-:checked ~ label.tree_label .tree_label__body {
-    border-bottom: 3px solid #fec;
-}
+// :checked ~ label.tree_label .tree_label__body {
+//     border-bottom: 3px solid #fec;
+// }
 
 /* ————————————————————–
     Tree branches
