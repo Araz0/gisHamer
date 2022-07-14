@@ -60,7 +60,7 @@ function printCategory($category)
                 foreach ($entries as $entry) {
             ?>
                     <li>
-                        <div class="tree_label" 
+                        <div class="tree_label" style="--entryColor: <?php echo $entry->color ?>" 
                             onclick="SpawnDialog('<?php echo $entry->title ?>', '<?php echo $entry->link ?>', '<?php echo $entry->info ?>', '<?php echo $entry->color ?>', '<?php echo $entry->thumbnail ?>')">
                             <div>
                                 <?php echo $entry->title ?>

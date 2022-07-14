@@ -190,10 +190,10 @@ label.tree_label:after {
 .tree div.tree_label::before {
     content: "";
     width: 5px;
-    height: calc(103%);
+    height: 99%;
     border-radius: 5px;
-    background-color: red;
+    background-color: var(--entryColor);
     margin-left: -1rem;
     position: absolute;
-    margin-top: -4px;
+    margin-top: -3px;
 }
