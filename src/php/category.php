@@ -128,6 +128,14 @@ function printCategory($category)
             }
         }
 
+        var entryActions = document.getElementsByClassName("tree_label__actions");
+        // foreach item in entryActions, block click event listener when its parent is clicked:
+        for (var i = 0; i < entryActions.length; i++) {
+            entryActions[i].addEventListener("click", function(e) {
+                e.stopPropagation();
+            });
+        }
+
         //javascript function SpawnDialog() to spawn a diglog with title, link, info, color, and thumbnail of the entry clicked in the tree
         function SpawnDialog(title, link, info, color, thumbnail) {
             var dialog = document.createElement("div");
@@ -153,6 +161,7 @@ function printCategory($category)
             //get .tree element and append the dialog to it
             var tree = document.getElementsByClassName("tree")[0];
             tree.appendChild(dialog);
+            
         }
     </script>
 </body>
