@@ -67,7 +67,7 @@ if (isset($_POST['update_main_category'])) {
             </label>
 
             <label for="main_category_icon"><b>Icon</b><br>
-                <img class="form_tumbnail_icon" src="<?php echo $icon_fallback ?>" alt="News Post Thumbnail Image"><br>
+                <img class="form_tumbnail_icon" id="form_tumbnail_icon" src="<?php echo $icon_fallback ?>" alt="News Post Thumbnail Image"><br>
                 <input type="file" name="main_category_icon" id="main_category_icon" max-size="1000" accept="image/*,.jpg">
             </label>
 
@@ -78,7 +78,10 @@ if (isset($_POST['update_main_category'])) {
             <?php } ?>
         </form>
     </section>
-
+    <script src="../js/script.js"></script>
+    <script type="text/javascript">
+        addPreviewSupport('main_category_icon', 'form_tumbnail_icon');
+    </script>
 </body>
 
 </html>

@@ -184,7 +184,7 @@ if (isset($_POST['update_entry'])) {
             </datalist>
             </label>
             <label for="entry_thumbnail"><b>Vorschau Bild</b><br>
-                <img class="form_thumbnail" src="<?php echo $entry_thumbnail; ?>" alt="Vorschau Bild"><br>
+                <img class="form_thumbnail" id="form_thumbnail" src="<?php echo $entry_thumbnail; ?>" alt="Vorschau Bild"><br>
                 <input type="file" name="entry_thumbnail" id="entry_thumbnail" max-size="100000" accept="image/*,.jpg">
             </label>
 
@@ -198,7 +198,7 @@ if (isset($_POST['update_entry'])) {
 </body>
 
 </html>
-
+<script src="../js/script.js"></script>
 <script type="text/javascript">
     var createCategory = document.getElementById("create_category");
     var createEntry = document.getElementById("create_entry");
@@ -229,4 +229,7 @@ if (isset($_POST['update_entry'])) {
     if (entry) {
         toggleType();
     }
+    
+    // on change of image --> change preview image
+    addPreviewSupport('entry_thumbnail', 'form_thumbnail');
 </script>
