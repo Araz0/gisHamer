@@ -2,7 +2,7 @@
 <html lang="de">
 
 <?php
-$pagetitle = "Hauptkategorie ".$_GET["cid"]." | Gishamer";
+$pagetitle = "Hauptkategorie " . $_GET["cid"] . " | Gishamer";
 require "./parts/head.php";
 
 $category_id = $_GET["cid"];
@@ -14,12 +14,12 @@ if ($maincategory->id == null) { // check if enterd maincategory does not exists
 function printCategory($category)
 {
     $category_id = $_GET["cid"];
-    //if the category is defined
+    //if the category is defined:
     if ($category->id) {
         //get all entries and sub-categories of this category:
         $entries = getEntriesByCategoryId($category->id);
         $subCategories = getSubCategoriesByCategoryId($category->id);
-    ?>
+?>
         <!-- input and label for the current category to enable toggling view of children -->
         <input type="checkbox" id="c<?php echo $category->id; ?>" <?php echo ($category->type == "main_category") ? 'checked="true"' : ''; ?> />
         <label for="c<?php echo $category->id; ?>" class="tree_label">
@@ -60,8 +60,7 @@ function printCategory($category)
                 foreach ($entries as $entry) {
             ?>
                     <li>
-                        <div class="tree_label" 
-                            onclick="SpawnDialog('<?php echo $entry->title ?>', '<?php echo $entry->link ?>', '<?php echo $entry->info ?>', '<?php echo $entry->color ?>', '<?php echo $entry->thumbnail ?>')">
+                        <div class="tree_label" style="--entryColor: <?php echo $entry->color ?>" onclick="SpawnDialog('<?php echo $entry->title ?>', '<?php echo $entry->link ?>', '<?php echo $entry->info ?>', '<?php echo $entry->color ?>', '<?php echo $entry->thumbnail ?>')">
                             <div>
                                 <?php echo $entry->title ?>
                                 <?php
@@ -128,6 +127,14 @@ function printCategory($category)
             }
         }
 
+        var entryActions = document.getElementsByClassName("tree_label__actions");
+        // foreach item in entryActions, block click event listener when its parent is clicked:
+        for (var i = 0; i < entryActions.length; i++) {
+            entryActions[i].addEventListener("click", function(e) {
+                e.stopPropagation();
+            });
+        }
+
         //javascript function SpawnDialog() to spawn a diglog with title, link, info, color, and thumbnail of the entry clicked in the tree
         function SpawnDialog(title, link, info, color, thumbnail) {
             var dialog = document.createElement("div");
@@ -153,7 +160,9 @@ function printCategory($category)
             //get .tree element and append the dialog to it
             var tree = document.getElementsByClassName("tree")[0];
             tree.appendChild(dialog);
+
         }
     </script>
 </body>
+
 </html>
