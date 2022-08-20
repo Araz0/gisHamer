@@ -53,7 +53,7 @@ if (isset($_POST['delete_category'])) {
     $category_id = $_GET["cid"];
     if (empty($errors)) {
         deleteCategory($category_id);
-        header("Location: /");
+        header('Location: /category.php?cid=' . $maincategory_id);
         die();
     }
 }
@@ -63,8 +63,7 @@ if (isset($_POST['update_category'])) {
     $category_id = $_GET["cid"];
     if (empty($errors)) {
         updateCategory($category_id, $category_name);
-        header("Location: /");
-        //todo redirect to main category
+        header('Location: /category.php?cid=' . $maincategory_id);
         die();
     }
 }
@@ -104,7 +103,7 @@ if (isset($_POST['create_entry'])) {
 
     if (empty($errors)) {
         createLinkEntry($entry_title, $entry_link, $entry_text, $color, $entry_thumbnail, $parent_category_id);
-        header('Location: /');
+        header('Location: /category.php?cid=' . $maincategory_id);
     }
 }
 
@@ -112,7 +111,7 @@ if (isset($_POST['delete_entry'])) {
     $entry_id = $_GET["eid"];
     if (empty($errors)) {
         deleteLinkEntry($entry_id);
-        header("Location: /");
+        header('Location: /category.php?cid=' . $maincategory_id);
         die();
     }
 }
@@ -122,16 +121,16 @@ if (isset($_POST['update_entry'])) {
     $entry_link = $_POST['entry_link'];
     $entry_text = $_POST['entry_text'];
     $color = $_POST['color'];
-
-    $entry_thumbnail = uploadToStorage(array('jpeg', 'jpg', 'png', 'svg'), $storage_folder, array(basename($_FILES[$image_input]['name']), $_FILES[$image_input]['tmp_name'], $_FILES[$image_input]['size'], $_FILES[$image_input]['type'], $_FILES[$image_input]['error']));
-    if ($entry_thumbnail == null || $entry_thumbnail == -1) {
-        $entry_thumbnail = $_preview_image;
+    if (!empty($_FILES[$image_input]['name'])) {
+        $entry_thumbnail = uploadToStorage(array('jpeg', 'jpg', 'png', 'svg'), $storage_folder, array(basename($_FILES[$image_input]['name']), $_FILES[$image_input]['tmp_name'], $_FILES[$image_input]['size'], $_FILES[$image_input]['type'], $_FILES[$image_input]['error']));
+        if ($entry_thumbnail == null || $entry_thumbnail == -1) {
+            $entry_thumbnail = $_preview_image;
+        }
     }
 
     if (empty($errors)) {
         updateLinkEntry($entry_title, $entry_link, $entry_text, $color, $entry_thumbnail, $entry_id_edit);
-        header("Location: /");
-        //todo redirect to main category
+        header('Location: /category.php?cid=' . $maincategory_id);
         die();
     }
 }
@@ -139,14 +138,19 @@ if (isset($_POST['update_entry'])) {
 
 <body>
     <?php require "../parts/nav.php"; ?>
-    <h1><?php echo (isset($category_id_edit) || isset($entry_id_edit)) ? 'Eintrag bearbeiten' : ('Neuer Eintrag in ' . $maincategory->title)  ?></h1>
-    <?php if (!isset($category_id_edit)) { ?><button onclick="toggleType()" id="toggle_type" class="toggle toggle--on"></button><?php } ?>
+    <h1><?php echo (isset($category_id_edit) || isset($entry_id_edit)) ? 'Eintrag bearbeiten' : ('Neuer Eintrag in ' . $parentcategory_title)  ?></h1>
+    <?php if (!isset($category_id_edit)) { ?><button onclick="toggleType()" id="toggle_type" class="toggle toggle--on">
+            <div class="manage_entry_toggle">
+                <div>KATEGORIE</div>
+                <div>FILE</div>
+            </div>
+        </button><?php } ?>
     <section id="create_category">
         <form action="" method="post" enctype="multipart/form-data" <?php if (isset($category_id_edit)) { ?>onsubmit="return confirm('Willst du die Änderungen wirklich speichern?');" <?php } ?>>
             <input type="hidden" name="parent_category_id" value="<?php echo $category_id; ?>" id="parent_category_id" required>
-            <label for="parent_category_name"><b>Parent-Kategorie</b><br>
+            <!-- <label for="parent_category_name"><b>Parent-Kategorie</b><br>
                 <input readonly type="text" name="parent_category_name" value="<?php echo $parentcategory_title ?>" id="parent_category_name" required>
-            </label>
+            </label> -->
             <label for="category_name"><b>Titel</b><br>
                 <input type="text" name="category_name" placeholder="Titel der Kategorie" value="<?php echo $category_title ?>" id="category_name" required>
             </label>
@@ -161,9 +165,9 @@ if (isset($_POST['update_entry'])) {
     <section id="create_entry" style="display:none;">
         <form action="" method="post" enctype="multipart/form-data" <?php if (isset($entry_id_edit)) { ?>onsubmit="return confirm('Willst du die Änderungen wirklich speichern?');" <?php } ?>>
             <input type="hidden" name="parent_category_id" value="<?php echo $category_id; ?>" id="parent_category_id" required>
-            <label for="parent_category_name"><b>Parent-Kategorie</b><br>
+            <!-- <label for="parent_category_name"><b>Parent-Kategorie</b><br>
                 <input readonly type="text" name="parent_category_name" value="<?php echo $parentcategory_title ?>" id="parent_category_name" required>
-            </label>
+            </label> -->
             <label for="entry_title"><b>Titel</b><br>
                 <input type="text" name="entry_title" placeholder="Titel" value="<?php echo $entry_title ?>" id="entry_title" required>
             </label>
@@ -174,14 +178,28 @@ if (isset($_POST['update_entry'])) {
                 <textarea id="entry_text" name="entry_text" rows="10" placeholder="Vorschau Info" required><?php echo $entry_text; ?></textarea>
             </label>
             <label for="color"><b>Farbe</b><br>
-                <input type="color" name="color" id="color" list="presets" value="#e1c9f8" required></label>
-            <datalist id="presets">
-                <option value="#e1c9f8">pink</option>
-                <option value="#988dae">violet</option>
-                <option value="#f8dcc9">orange</option>
-                <option value="#ae9a8d">brown</option>
-                <option value="#e4f8c9">green</option>
-            </datalist>
+                <?php echo ($entry->color == "main_category") ? 'checked="true"' : ''; ?>
+                <select name="color" id="color" list="presets" required>>
+                    <?php
+                    $colors = array();
+                    $colors[0] = (object) array('color' => '#1abc9c', 'name' => 'Teal');
+                    $colors[1] = (object) array('color' => '#27ae60', 'name' => 'Green');
+                    $colors[2] = (object) array('color' => '#3498db', 'name' => 'Blue');
+                    $colors[3] = (object) array('color' => '#8e44ad', 'name' => 'Purple');
+                    $colors[4] = (object) array('color' => '#c0392b', 'name' => 'Red');
+                    $colors[5] = (object) array('color' => '#e67e22', 'name' => 'Orange');
+                    $colors[6] = (object) array('color' => '#f1c40f', 'name' => 'Yellow');
+                    $colors[7] = (object) array('color' => '#7f8c8d', 'name' => 'Gray');
+                    $colors[8] = (object) array('color' => '#2c3e50', 'name' => 'Dark');
+
+                    foreach ($colors as $color) {
+                        $selected = ($entry->color == $color->color) ? 'selected="true"' : '';
+                        echo '<option value="' . $color->color . '" style="background-color:' . $color->color . '" ' . $selected . '>' . $color->name . '</option>';
+                    }
+                    ?>
+                </select>
+            </label>
+
             </label>
             <label for="entry_thumbnail"><b>Vorschau Bild</b><br>
                 <img class="form_thumbnail" id="form_thumbnail" src="<?php echo $entry_thumbnail; ?>" alt="Vorschau Bild"><br>
