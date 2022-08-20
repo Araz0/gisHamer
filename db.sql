@@ -22,7 +22,8 @@ CREATE TABLE categories(
     title VARCHAR(255) NOT NULL,
     icon VARCHAR(255),
     type VARCHAR(255) NOT NULL,
-    category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
+    category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
+    main_category_id INTEGER
 );
 
 CREATE TABLE entries(

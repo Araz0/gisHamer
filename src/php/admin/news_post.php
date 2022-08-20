@@ -89,7 +89,6 @@ if (isset($_POST['delete_news'])) {
             <?php } ?>
         </form>
     </section>
-    <script src="../js/script.js"></script>
     <script type="text/javascript">
         addPreviewSupport('entry_thumbnail', 'form_thumbnail');
     </script>

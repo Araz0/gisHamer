@@ -11,10 +11,37 @@
         gap: 2.5rem;
     }
 
-    ul li:nth-child(2) {
+    .navSearch{
         margin-left: auto;
+        margin-right: auto;
+        ul li{
+            &:not(:last-child){
+                border-bottom: 1px solid gray;
+            }
+            width: 100%;
+            cursor: pointer;
+            padding: 0 5px;
+            div{
+                display: flex;
+                line-height: 1rem;
+                align-items: center;
+            }
+            img{
+                width: 24px;
+                height: 24px;
+            }
+        }
     }
-
+    #search-results{
+        position: absolute;
+        background: var(--white);
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        width: 250px;
+        margin-top: 5px;
+        gap: 0px;
+    }
     ul:first-child {
         padding-top: 0.5rem;
     }
@@ -26,6 +53,7 @@
     a {
         font-size: 1.2rem;
         color: var(--white);
+
     }
 
     img {

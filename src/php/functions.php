@@ -108,19 +108,20 @@ function uploadToStorage($_allowedExtentions, $_uploadFolder, $_inputArray)
         return null;
     }
 }
-function createCategory($category_name, $category_icon, $category_type, $parent_category_id = -1)
+function createCategory($category_name, $category_icon, $category_type, $main_category_id = NULL,  $parent_category_id = -1)
 {
     global $dbh;
     $query = "";
     if ($category_type == "main_category") {
-        $query = "INSERT INTO categories (title, icon, type) VALUES (:title, :icon, :type)";
+        $query = "INSERT INTO categories (title, icon, type, main_category_id) VALUES (:title, :icon, :type, :main_category_id)";
     } else {
-        $query = "INSERT INTO categories (title, type, category_id) VALUES (:title, :type, :category_id)";
+        $query = "INSERT INTO categories (title, type, category_id, main_category_id) VALUES (:title, :type, :category_id, :main_category_id)";
     }
 
     $sth = $dbh->prepare($query);
     $sth->bindParam('title', $category_name, PDO::PARAM_STR);
     $sth->bindParam('type', $category_type, PDO::PARAM_STR);
+    $sth->bindParam('main_category_id', $main_category_id, PDO::PARAM_INT);
 
     if ($category_type == "main_category") {
         $sth->bindParam('icon', $category_icon, PDO::PARAM_STR);
@@ -349,5 +350,22 @@ function getSubCategoriesByCategoryId($category_id)
     $query = "SELECT * FROM categories WHERE category_id=?";
     $sth = $dbh->prepare($query);
     $sth->execute(array($category_id));
+    return $sth->fetchAll();
+}
+
+function searchEntries($searchTerm)
+{
+    global $dbh;
+    $query = "SELECT * FROM entries WHERE title ILIKE :searchTerm OR info ILIKE :searchTerm";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array(':searchTerm' => '%' . $searchTerm . '%'));
+    return $sth->fetchAll();
+}
+function searchCategories($searchTerm)
+{
+    global $dbh;
+    $query = "SELECT * FROM categories WHERE title ILIKE :searchTerm";
+    $sth = $dbh->prepare($query);
+    $sth->execute(array(':searchTerm' => '%' . $searchTerm . '%'));
     return $sth->fetchAll();
 }
