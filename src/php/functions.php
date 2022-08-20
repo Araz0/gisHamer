@@ -169,7 +169,7 @@ function getMainCategories()
 {
     global $dbh;
     $category = 'main_category';
-    $query = "SELECT * FROM categories WHERE type=?";
+    $query = "SELECT * FROM categories WHERE type=? ORDER BY title";
     $sth = $dbh->prepare($query);
     $sth->execute(array($category));
     return $sth->fetchAll();
@@ -286,7 +286,7 @@ function createLinkEntry($title, $link, $info, $color, $thumbnail, $category_id)
     $sth->bindParam('color', $color, PDO::PARAM_STR);
     $sth->bindParam('thumbnail', $thumbnail, PDO::PARAM_STR);
     $sth->bindParam('category_id', $category_id, PDO::PARAM_INT);
-    
+
     $sth->execute();
 }
 
@@ -304,7 +304,7 @@ function updateLinkEntry($title, $link, $info, $color, $thumbnail, $id)
     global $dbh;
     $title = strip_tags($title);
     $link = strip_tags($link);
-    $text = strip_tags($text);
+    $info = strip_tags($info);
     $color = strip_tags($color);
 
     $query = "UPDATE entries SET title=:title, link=:link, info=:info, color=:color, thumbnail=:thumbnail  WHERE id=:id";
