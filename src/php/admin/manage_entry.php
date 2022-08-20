@@ -69,7 +69,7 @@ if (isset($_POST['update_category'])) {
     }
 }
 
-//--------LINK ENTRY--------//
+//---------LINK ENTRY--------//
 
 //set when updating a link entry
 $entry_id_edit = $_GET["eid"];
@@ -229,7 +229,7 @@ if (isset($_POST['update_entry'])) {
     if (entry) {
         toggleType();
     }
-    
+
     // on change of image --> change preview image
     addPreviewSupport('entry_thumbnail', 'form_thumbnail');
 </script>

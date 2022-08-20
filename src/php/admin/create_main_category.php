@@ -13,7 +13,7 @@ $icon_fallback = "/media/icon_fallback.png";
 
 $title = "";
 
-//UPDATE
+//UPDATE CATEGORY
 $category_id = $_GET["cid"];
 
 if (isset($category_id)) {

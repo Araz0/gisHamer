@@ -1,4 +1,3 @@
-
 function addPreviewSupport(inputId, previewId) {
     const preview = document.getElementById(previewId);
     const input = document.getElementById(inputId);
