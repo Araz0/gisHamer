@@ -78,7 +78,6 @@ if (isset($_POST['update_main_category'])) {
             <?php } ?>
         </form>
     </section>
-    <script src="../js/script.js"></script>
     <script type="text/javascript">
         addPreviewSupport('main_category_icon', 'form_tumbnail_icon');
     </script>

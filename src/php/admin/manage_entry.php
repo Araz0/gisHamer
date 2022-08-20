@@ -44,7 +44,7 @@ if (isset($_POST['create_sub_category'])) {
     $parent_category_id = $_POST['parent_category_id'];
 
     if (empty($errors)) {
-        createCategory($category_name, null, "sub_category", $parent_category_id);
+        createCategory($category_name, null, "sub_category", $maincategory_id, $parent_category_id);
         header('Location: /category.php?cid=' . $maincategory_id);
     }
 }
@@ -69,6 +69,10 @@ if (isset($_POST['update_category'])) {
 }
 
 //---------LINK ENTRY--------//
+
+/**
+ * Currently, I am doing a dynamic drop-down using PHP. But I have some issues in it. I can't figure it out. It doesn't retrieve the 2nd dropdown values. I did it like below. What I want is when we select an ItemName, The brand names should retrieve to the 2nd dropdown
+ */
 
 //set when updating a link entry
 $entry_id_edit = $_GET["eid"];
@@ -216,7 +220,6 @@ if (isset($_POST['update_entry'])) {
 </body>
 
 </html>
-<script src="../js/script.js"></script>
 <script type="text/javascript">
     var createCategory = document.getElementById("create_category");
     var createEntry = document.getElementById("create_entry");
