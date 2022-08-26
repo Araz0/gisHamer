@@ -55,7 +55,7 @@
                                 // containerDiv
                                 icon.src = "/media/icon_document-filled.svg";
                                 containerDiv.addEventListener("click", function(evnt) {
-                                    SpawnDialog(element.title, element.link, element.info, element.color, element.thumbnail)
+                                    SpawnDialog(element.title, element.link, `${element.info}`, element.color, element.thumbnail)
                                 });
                             } else {
                                 //TODO: add specific icon
