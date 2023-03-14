@@ -1,6 +1,5 @@
 node_modules/
 .vscode/
-public/
 
 package.bk
 config.php
