@@ -1,5 +1,11 @@
-@import 'variables.scss';
+@import "variables.scss";
+@import "base.scss";
 
-@import 'base.scss';
+@import "header.scss";
 
-@import 'home.scss';
+@import "home.scss";
+
+@import "news_card.scss";
+@import "dialog.scss";
+
+@import "category.scss";
