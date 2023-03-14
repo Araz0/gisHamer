@@ -474,6 +474,8 @@ input[value=Löschen]:hover {
   background-color: var(--darkblue);
   color: var(--white);
   border-radius: 10px;
+  border: none;
+  width: 100%;
 }
 
 /*big thanks to https://codepen.io/bisserof/pen/nrMveb for the core styling*/

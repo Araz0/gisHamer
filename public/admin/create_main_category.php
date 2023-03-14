@@ -12,9 +12,12 @@ $icon_input = "main_category_icon";
 $icon_fallback = "/media/icon_fallback.png";
 
 $title = "";
+$category_id = null;
 
 //UPDATE CATEGORY
-$category_id = $_GET["cid"];
+if (isset($_GET["cid"])) {
+    $category_id = $_GET["cid"];
+}
 
 if (isset($category_id)) {
     $category = getCategoryById($category_id);

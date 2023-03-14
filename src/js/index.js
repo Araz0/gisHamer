@@ -39,9 +39,7 @@ function SpawnDialog(title, link, info, color, thumbnail) {
     info +
     "</p>" +
     '<div class="dialog__container__actions">' +
-    '<a href="' +
-    link +
-    '" target="_blank" class="dialog__container__actions__open">Dokument öffnen</a>' +
+    `<button class="dialog__container__actions__open" onclick="copyToClipboard('${link}')">Dateipfad kopieren</button>`+
     "</div>" +
     "</div>";
 
@@ -57,4 +55,8 @@ function deleteDialog(e) {
   } else if (e.classList.contains("dialog")) {
     e.remove();
   }
+}
+function copyToClipboard(value) {
+  navigator.clipboard.writeText(value);
+  alert('Dateipfad wurde kopiert!')
 }
