@@ -14,6 +14,8 @@ function addPreviewSupport(inputId, previewId) {
 
 //javascript function SpawnDialog() to spawn a diglog with title, link, info, color, and thumbnail of the entry clicked in the tree
 function SpawnDialog(title, link, info, color, thumbnail) {
+  var escapedPath = link.replace(/\\/g, "\\\\");
+
   var dialog = document.createElement("div");
   dialog.className = "dialog";
   //dialog on click event to delete the dialog
@@ -39,7 +41,7 @@ function SpawnDialog(title, link, info, color, thumbnail) {
     info +
     "</p>" +
     '<div class="dialog__container__actions">' +
-    `<button class="dialog__container__actions__open" onclick="copyToClipboard('${link}')">Dateipfad kopieren</button>`+
+    `<button class="dialog__container__actions__open" onclick="copyToClipboard('${String.raw`${escapedPath}`}')">Dateipfad kopieren</button>` +
     "</div>" +
     "</div>";
 
@@ -58,5 +60,5 @@ function deleteDialog(e) {
 }
 function copyToClipboard(value) {
   navigator.clipboard.writeText(value);
-  alert('Dateipfad wurde kopiert!')
+  alert("Dateipfad wurde kopiert!");
 }

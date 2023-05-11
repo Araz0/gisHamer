@@ -100,13 +100,15 @@ if (isset($_POST['create_entry'])) {
     $entry_text = $_POST['entry_text'];
     $color = $_POST['color'];
 
+    $encoded_path = pg_escape_string($entry_link);
+
     $entry_thumbnail = uploadToStorage(array('jpeg', 'jpg', 'png', 'svg'), $storage_folder, array(basename($_FILES[$image_input]['name']), $_FILES[$image_input]['tmp_name'], $_FILES[$image_input]['size'], $_FILES[$image_input]['type'], $_FILES[$image_input]['error']));
     if ($entry_thumbnail == null || $entry_thumbnail == -1) {
         $entry_thumbnail = $_preview_image;
     }
 
     if (empty($errors)) {
-        createLinkEntry($entry_title, $entry_link, $entry_text, $color, $entry_thumbnail, $parent_category_id);
+        createLinkEntry($entry_title, $encoded_path, $entry_text, $color, $entry_thumbnail, $parent_category_id);
         header('Location: /category.php?cid=' . $maincategory_id);
     }
 }
@@ -132,8 +134,10 @@ if (isset($_POST['update_entry'])) {
         }
     }
 
+    $encoded_path = pg_escape_string($entry_link);
+
     if (empty($errors)) {
-        updateLinkEntry($entry_title, $entry_link, $entry_text, $color, $entry_thumbnail, $entry_id_edit);
+        updateLinkEntry($entry_title, $encoded_path, $entry_text, $color, $entry_thumbnail, $entry_id_edit);
         header('Location: /category.php?cid=' . $maincategory_id);
         die();
     }

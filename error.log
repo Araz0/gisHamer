@@ -1,0 +1,268 @@
+[Thu Feb 23 14:50:13.326302 2023] [mpm_winnt:notice] [pid 4428:tid 544] AH00455: Apache/2.4.55 (Win64) configured -- resuming normal operations
+[Thu Feb 23 14:50:13.326302 2023] [mpm_winnt:notice] [pid 4428:tid 544] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Thu Feb 23 14:50:13.326302 2023] [core:notice] [pid 4428:tid 544] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Thu Feb 23 14:50:13.326302 2023] [mpm_winnt:notice] [pid 4428:tid 544] AH00418: Parent: Created child process 3924
+Apache server shutdown initiated...
+pm_winnt:notice] [pid 3924:tid 528] AH00354: Child: Starting 64 worker threads.
+[Thu Feb 23 14:51:01.079392 2023] [mpm_winnt:notice] [pid 4428:tid 544] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Feb 23 14:51:03.126335 2023] [mpm_winnt:notice] [pid 3924:tid 528] AH00364: Child: All worker threads have exited.
+[Thu Feb 23 14:51:03.157587 2023] [mpm_winnt:notice] [pid 4428:tid 544] AH00430: Parent: Child process 3924 exited successfully.
+[Thu Feb 23 14:51:56.349351 2023] [mpm_winnt:notice] [pid 164:tid 512] AH00455: Apache/2.4.55 (Win64) configured -- resuming normal operations
+[Thu Feb 23 14:51:56.349351 2023] [mpm_winnt:notice] [pid 164:tid 512] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Thu Feb 23 14:51:56.349351 2023] [core:notice] [pid 164:tid 512] AH00094: Command line: 'httpd.exe -d C:/Apache24'
+[Thu Feb 23 14:51:56.364977 2023] [mpm_winnt:notice] [pid 164:tid 512] AH00418: Parent: Created child process 6040
+Apache server shutdown initiated...
+pm_winnt:notice] [pid 6040:tid 536] AH00354: Child: Starting 64 worker threads.
+[Thu Feb 23 14:53:27.424692 2023] [mpm_winnt:notice] [pid 164:tid 512] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Feb 23 14:53:29.455835 2023] [mpm_winnt:notice] [pid 6040:tid 536] AH00364: Child: All worker threads have exited.
+[Thu Feb 23 14:53:29.487130 2023] [mpm_winnt:notice] [pid 164:tid 512] AH00430: Parent: Child process 6040 exited successfully.
+[Thu Feb 23 17:47:34.983055 2023] [mpm_winnt:notice] [pid 508:tid 524] AH00455: Apache/2.4.55 (Win64) configured -- resuming normal operations
+[Thu Feb 23 17:47:34.983055 2023] [mpm_winnt:notice] [pid 508:tid 524] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Thu Feb 23 17:47:34.983055 2023] [core:notice] [pid 508:tid 524] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Thu Feb 23 17:47:34.998677 2023] [mpm_winnt:notice] [pid 508:tid 524] AH00418: Parent: Created child process 5256
+[Thu Feb 23 17:47:35.436169 2023] [mpm_winnt:notice] [pid 5256:tid 508] AH00354: Child: Starting 64 worker threads.
+[Thu Feb 23 17:58:18.536867 2023] [mpm_winnt:notice] [pid 508:tid 524] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Feb 23 17:58:20.556884 2023] [mpm_winnt:notice] [pid 5256:tid 508] AH00364: Child: All worker threads have exited.
+[Thu Feb 23 17:58:20.572476 2023] [mpm_winnt:notice] [pid 508:tid 524] AH00430: Parent: Child process 5256 exited successfully.
+PHP Warning:  'C:\\Windows\\SYSTEM32\\VCRUNTIME140.dll' 14.12 is not compatible with this PHP build linked with 14.29 in Unknown on line 0
+[Thu Feb 23 18:31:10.412554 2023] [:emerg] [pid 2372:tid 512] AH00020: Configuration Failed, exiting
+[Thu Feb 23 18:32:22.366054 2023] [core:warn] [pid 1276:tid 508] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  'C:\\Windows\\SYSTEM32\\VCRUNTIME140.dll' 14.12 is not compatible with this PHP build linked with 14.29 in Unknown on line 0
+[Thu Feb 23 18:32:22.397350 2023] [:emerg] [pid 1276:tid 508] AH00020: Configuration Failed, exiting
+[Thu Feb 23 18:33:36.026063 2023] [core:warn] [pid 6988:tid 500] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  'C:\\Windows\\SYSTEM32\\VCRUNTIME140.dll' 14.12 is not compatible with this PHP build linked with 14.29 in Unknown on line 0
+[Thu Feb 23 18:33:36.041695 2023] [:emerg] [pid 6988:tid 500] AH00020: Configuration Failed, exiting
+[Thu Feb 23 18:35:12.039342 2023] [core:warn] [pid 6300:tid 508] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  'C:\\Windows\\SYSTEM32\\VCRUNTIME140.dll' 14.12 is not compatible with this PHP build linked with 14.29 in Unknown on line 0
+[Thu Feb 23 18:35:12.054964 2023] [:emerg] [pid 6300:tid 508] AH00020: Configuration Failed, exiting
+[Thu Feb 23 18:51:32.886172 2023] [core:warn] [pid 5188:tid 548] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  'C:\\Windows\\SYSTEM32\\VCRUNTIME140.dll' 14.12 is not compatible with this PHP build linked with 14.29 in Unknown on line 0
+[Thu Feb 23 18:51:32.910160 2023] [:emerg] [pid 5188:tid 548] AH00020: Configuration Failed, exiting
+[Thu Feb 23 19:01:52.202073 2023] [core:warn] [pid 5196:tid 492] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  'C:\\Windows\\SYSTEM32\\VCRUNTIME140.dll' 14.12 is not compatible with this PHP build linked with 14.29 in Unknown on line 0
+[Thu Feb 23 19:01:52.228107 2023] [:emerg] [pid 5196:tid 492] AH00020: Configuration Failed, exiting
+[Thu Feb 23 19:04:57.561864 2023] [core:warn] [pid 1980:tid 500] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  'C:\\Windows\\SYSTEM32\\VCRUNTIME140.dll' 14.15 is not compatible with this PHP build linked with 14.29 in Unknown on line 0
+[Thu Feb 23 19:04:57.593114 2023] [:emerg] [pid 1980:tid 500] AH00020: Configuration Failed, exiting
+[Thu Feb 23 19:05:30.444437 2023] [core:warn] [pid 6856:tid 508] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Feb 23 19:05:30.444437 2023] [mpm_winnt:notice] [pid 6856:tid 508] AH00455: Apache/2.4.55 (Win64) configured -- resuming normal operations
+[Thu Feb 23 19:05:30.444437 2023] [mpm_winnt:notice] [pid 6856:tid 508] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Thu Feb 23 19:05:30.444437 2023] [core:notice] [pid 6856:tid 508] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Thu Feb 23 19:05:30.460065 2023] [mpm_winnt:notice] [pid 6856:tid 508] AH00418: Parent: Created child process 6812
+[Thu Feb 23 19:05:30.944420 2023] [mpm_winnt:notice] [pid 6812:tid 540] AH00354: Child: Starting 64 worker threads.
+[Thu Feb 23 19:09:06.029714 2023] [mpm_winnt:notice] [pid 6856:tid 508] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Feb 23 19:09:08.060908 2023] [mpm_winnt:notice] [pid 6812:tid 540] AH00364: Child: All worker threads have exited.
+[Thu Feb 23 19:09:08.076574 2023] [mpm_winnt:notice] [pid 6856:tid 508] AH00430: Parent: Child process 6812 exited successfully.
+[Thu Feb 23 19:12:17.871036 2023] [mpm_winnt:notice] [pid 6996:tid 516] AH00455: Apache/2.4.55 (Win64) configured -- resuming normal operations
+[Thu Feb 23 19:12:17.871036 2023] [mpm_winnt:notice] [pid 6996:tid 516] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Thu Feb 23 19:12:17.871036 2023] [core:notice] [pid 6996:tid 516] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Thu Feb 23 19:12:17.871036 2023] [mpm_winnt:notice] [pid 6996:tid 516] AH00418: Parent: Created child process 6256
+[Thu Feb 23 19:12:18.371026 2023] [mpm_winnt:notice] [pid 6256:tid 508] AH00354: Child: Starting 64 worker threads.
+[Tue Mar 14 17:42:50.925319 2023] [core:error] [pid 6256:tid 1248] (20024)The given path is misformatted or contained invalid characters: [client ::1:64447] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+[Tue Mar 14 17:54:06.415922 2023] [core:error] [pid 6256:tid 1248] (20024)The given path is misformatted or contained invalid characters: [client ::1:64771] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+[Tue Mar 14 17:54:08.716644 2023] [core:error] [pid 6256:tid 1248] (20024)The given path is misformatted or contained invalid characters: [client ::1:64771] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+The 'Apache2.4' service is restarting.
+Starting the 'Apache2.4' service
+The 'Apache2.4' service is running.
+[Tue Mar 14 18:03:56.992710 2023] [core:error] [pid 6256:tid 1252] (20024)The given path is misformatted or contained invalid characters: [client ::1:61022] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+[Tue Mar 14 18:03:59.070413 2023] [core:error] [pid 6256:tid 1252] (20024)The given path is misformatted or contained invalid characters: [client ::1:61022] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+[Tue Mar 14 18:04:00.112918 2023] [core:error] [pid 6256:tid 1252] (20024)The given path is misformatted or contained invalid characters: [client ::1:61022] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+[Tue Mar 14 18:04:00.243675 2023] [core:error] [pid 6256:tid 1252] (20024)The given path is misformatted or contained invalid characters: [client ::1:61022] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+[Tue Mar 14 18:04:00.363672 2023] [core:error] [pid 6256:tid 1252] (20024)The given path is misformatted or contained invalid characters: [client ::1:61022] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+[Tue Mar 14 18:11:30.548806 2023] [core:error] [pid 6256:tid 1252] (20024)The given path is misformatted or contained invalid characters: [client ::1:52710] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+[Tue Mar 14 18:17:09.402140 2023] [core:error] [pid 6256:tid 1248] (20024)The given path is misformatted or contained invalid characters: [client ::1:59699] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+[Tue Mar 14 18:18:32.063737 2023] [core:error] [pid 6256:tid 1252] (20024)The given path is misformatted or contained invalid characters: [client ::1:64415] AH00127: Cannot map GET /%3C?php%20echo%20$category-%3Eicon;%20?%3E HTTP/1.1 to file, referer: http://localhost/
+[Tue Mar 14 18:22:09.461529 2023] [mpm_winnt:notice] [pid 6996:tid 516] AH00428: Parent: child process 6256 exited with status 1 -- Restarting.
+[Tue Mar 14 18:22:09.508401 2023] [mpm_winnt:notice] [pid 6996:tid 516] AH00455: Apache/2.4.55 (Win64) configured -- resuming normal operations
+[Tue Mar 14 18:22:09.508401 2023] [mpm_winnt:notice] [pid 6996:tid 516] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Tue Mar 14 18:22:09.508401 2023] [core:notice] [pid 6996:tid 516] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Mar 14 18:22:09.508401 2023] [mpm_winnt:notice] [pid 6996:tid 516] AH00418: Parent: Created child process 9404
+[Tue Mar 14 18:22:10.008391 2023] [mpm_winnt:notice] [pid 9404:tid 508] AH00354: Child: Starting 64 worker threads.
+[Tue Mar 14 18:22:11.888137 2023] [mpm_winnt:crit] [pid 9404:tid 508] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Tue Mar 14 18:22:11.888137 2023] [mpm_winnt:warn] [pid 9404:tid 648] (OS 995)Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Tue Mar 14 18:22:11.888137 2023] [mpm_winnt:warn] [pid 9404:tid 1224] (OS 995)Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Tue Mar 14 18:22:13.914865 2023] [mpm_winnt:notice] [pid 9404:tid 508] AH00364: Child: All worker threads have exited.
+[Tue Mar 14 18:22:39.054733 2023] [core:warn] [pid 9724:tid 516] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Mar 14 18:22:39.085981 2023] [mpm_winnt:notice] [pid 9724:tid 516] AH00455: Apache/2.4.55 (Win64) PHP/8.2.3 configured -- resuming normal operations
+[Tue Mar 14 18:22:39.085981 2023] [mpm_winnt:notice] [pid 9724:tid 516] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Tue Mar 14 18:22:39.085981 2023] [core:notice] [pid 9724:tid 516] AH00094: Command line: 'httpd -d C:/Apache24'
+[Tue Mar 14 18:22:39.085981 2023] [mpm_winnt:notice] [pid 9724:tid 516] AH00418: Parent: Created child process 9864
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 9864:tid 520] AH00354: Child: Starting 64 worker threads.
+[Tue Mar 14 18:29:44.225256 2023] [mpm_winnt:notice] [pid 9724:tid 516] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+[Tue Mar 14 18:30:14.224988 2023] [mpm_winnt:notice] [pid 9724:tid 516] AH00431: Parent: Forcing termination of child process 9864
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql.so' (tried: C:\\php\\ext\\pgsql.so (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pgsql.so.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+[Tue Mar 14 18:31:10.142105 2023] [mpm_winnt:notice] [pid 8928:tid 500] AH00455: Apache/2.4.55 (Win64) PHP/8.2.3 configured -- resuming normal operations
+[Tue Mar 14 18:31:10.142105 2023] [mpm_winnt:notice] [pid 8928:tid 500] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Tue Mar 14 18:31:10.142105 2023] [core:notice] [pid 8928:tid 500] AH00094: Command line: 'httpd -d C:/Apache24'
+[Tue Mar 14 18:31:10.157728 2023] [mpm_winnt:notice] [pid 8928:tid 500] AH00418: Parent: Created child process 8932
+Apache server interrupted...
+able to load dynamic library 'pgsql.so' (tried: C:\\php\\ext\\pgsql.so (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pgsql.so.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+[Tue Mar 14 18:31:10.665366 2023] [mpm_winnt:notice] [pid 8932:tid 504] AH00354: Child: Starting 64 worker threads.
+[Tue Mar 14 18:32:00.425017 2023] [mpm_winnt:notice] [pid 8928:tid 500] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server shutdown initiated...
+[Tue Mar 14 18:32:30.454793 2023] [mpm_winnt:notice] [pid 8932:tid 504] AH00364: Child: All worker threads have exited.
+Starting the 'Apache2.4' service
+The 'Apache2.4' service is running.
+ore:warn] [pid 5908:tid 492] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql.so' (tried: C:\\php\\ext\\pgsql.so (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pgsql.so.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+[Tue Mar 14 18:33:18.991209 2023] [mpm_winnt:notice] [pid 5908:tid 492] AH00455: Apache/2.4.55 (Win64) PHP/8.2.3 configured -- resuming normal operations
+[Tue Mar 14 18:33:18.991209 2023] [mpm_winnt:notice] [pid 5908:tid 492] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Tue Mar 14 18:33:18.991209 2023] [core:notice] [pid 5908:tid 492] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Mar 14 18:33:18.991209 2023] [mpm_winnt:notice] [pid 5908:tid 492] AH00418: Parent: Created child process 9468
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql.so' (tried: C:\\php\\ext\\pgsql.so (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pgsql.so.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+[Tue Mar 14 18:33:19.517891 2023] [mpm_winnt:notice] [pid 9468:tid 544] AH00354: Child: Starting 64 worker threads.
+The 'Apache2.4' service is restarting.
+The 'Apache2.4' service has restarted.
+winnt:notice] [pid 5908:tid 492] AH00424: Parent: Received restart signal -- Restarting the server.
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_pgsql' (tried: C:\\php\\ext\\pdo_pgsql (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pdo_pgsql.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql' (tried: C:\\php\\ext\\pgsql (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pgsql.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql.so' (tried: C:\\php\\ext\\pgsql.so (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pgsql.so.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+[Tue Mar 14 18:38:03.103222 2023] [mpm_winnt:notice] [pid 5908:tid 492] AH00455: Apache/2.4.55 (Win64) PHP/8.2.3 configured -- resuming normal operations
+[Tue Mar 14 18:38:03.103222 2023] [mpm_winnt:notice] [pid 5908:tid 492] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Tue Mar 14 18:38:03.103222 2023] [core:notice] [pid 5908:tid 492] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Mar 14 18:38:03.103222 2023] [mpm_winnt:notice] [pid 5908:tid 492] AH00418: Parent: Created child process 8888
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_pgsql' (tried: C:\\php\\ext\\pdo_pgsql (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pdo_pgsql.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql' (tried: C:\\php\\ext\\pgsql (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pgsql.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql.so' (tried: C:\\php\\ext\\pgsql.so (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pgsql.so.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+[Tue Mar 14 18:38:04.060010 2023] [mpm_winnt:notice] [pid 8888:tid 520] AH00354: Child: Starting 64 worker threads.
+[Tue Mar 14 18:38:06.467010 2023] [mpm_winnt:notice] [pid 9468:tid 544] AH00364: Child: All worker threads have exited.
+The 'Apache2.4' service is restarting.
+The 'Apache2.4' service has restarted.
+winnt:notice] [pid 5908:tid 492] AH00424: Parent: Received restart signal -- Restarting the server.
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql.so' (tried: C:\\php\\ext\\pgsql.so (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pgsql.so.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+[Tue Mar 14 18:39:12.882615 2023] [mpm_winnt:notice] [pid 5908:tid 492] AH00455: Apache/2.4.55 (Win64) PHP/8.2.3 configured -- resuming normal operations
+[Tue Mar 14 18:39:12.882615 2023] [mpm_winnt:notice] [pid 5908:tid 492] AH00456: Apache Lounge VS17 Server built: Feb  9 2023 09:58:39
+[Tue Mar 14 18:39:12.882615 2023] [core:notice] [pid 5908:tid 492] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Mar 14 18:39:12.898244 2023] [mpm_winnt:notice] [pid 5908:tid 492] AH00418: Parent: Created child process 8164
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql.so' (tried: C:\\php\\ext\\pgsql.so (Das angegebene Modul wurde nicht gefunden), C:\\php\\ext\\php_pgsql.so.dll (Das angegebene Modul wurde nicht gefunden)) in Unknown on line 0
+[Tue Mar 14 18:39:13.690605 2023] [mpm_winnt:notice] [pid 8164:tid 520] AH00354: Child: Starting 64 worker threads.
+[Tue Mar 14 18:39:14.702848 2023] [mpm_winnt:notice] [pid 8888:tid 520] AH00364: Child: All worker threads have exited.
+[Tue Mar 14 18:41:44.341357 2023] [php:notice] [pid 8164:tid 1296] [client ::1:58516] PHP Deprecated:  setcookie(): Passing null to parameter #4 ($path) of type string is deprecated in C:\\Apache24\\htdocs\\login.php on line 31, referer: http://localhost/login.php
+[Tue Mar 14 18:41:44.341357 2023] [php:notice] [pid 8164:tid 1296] [client ::1:58516] PHP Deprecated:  setcookie(): Passing null to parameter #5 ($domain) of type string is deprecated in C:\\Apache24\\htdocs\\login.php on line 31, referer: http://localhost/login.php
+[Tue Mar 14 18:41:44.342358 2023] [php:notice] [pid 8164:tid 1296] [client ::1:58516] PHP Deprecated:  setcookie(): Passing null to parameter #6 ($secure) of type bool is deprecated in C:\\Apache24\\htdocs\\login.php on line 31, referer: http://localhost/login.php
+[Tue Mar 14 18:41:55.033638 2023] [php:warn] [pid 8164:tid 1272] [client ::1:50809] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\\Apache24\\htdocs\\logout.php on line 14, referer: http://localhost/index.php
+[Tue Mar 14 18:42:12.784067 2023] [php:error] [pid 8164:tid 1296] [client ::1:49362] script 'C:/Apache24/htdocs/register.php' not found or unable to stat
+[Tue Mar 14 18:44:35.767351 2023] [php:notice] [pid 8164:tid 1272] [client ::1:60836] PHP Deprecated:  setcookie(): Passing null to parameter #4 ($path) of type string is deprecated in C:\\Apache24\\htdocs\\login.php on line 31, referer: http://localhost/login.php
+[Tue Mar 14 18:44:35.767351 2023] [php:notice] [pid 8164:tid 1272] [client ::1:60836] PHP Deprecated:  setcookie(): Passing null to parameter #5 ($domain) of type string is deprecated in C:\\Apache24\\htdocs\\login.php on line 31, referer: http://localhost/login.php
+[Tue Mar 14 18:44:35.767351 2023] [php:notice] [pid 8164:tid 1272] [client ::1:60836] PHP Deprecated:  setcookie(): Passing null to parameter #6 ($secure) of type bool is deprecated in C:\\Apache24\\htdocs\\login.php on line 31, referer: http://localhost/login.php
+[Tue Mar 14 18:44:41.241314 2023] [php:warn] [pid 8164:tid 1268] [client ::1:58969] PHP Warning:  Undefined array key "cid" in C:\\Apache24\\htdocs\\admin\\create_main_category.php on line 17, referer: http://localhost/admin/
+[Tue Mar 14 18:45:56.796190 2023] [php:warn] [pid 8164:tid 1268] [client ::1:54081] PHP Warning:  Undefined array key "cid" in C:\\Apache24\\htdocs\\admin\\create_main_category.php on line 17, referer: http://localhost/admin/create_main_category.php
+[Tue Mar 14 18:46:01.446362 2023] [php:warn] [pid 8164:tid 1296] [client ::1:54082] PHP Warning:  Undefined array key 0 in C:\\Apache24\\htdocs\\category.php on line 60, referer: http://localhost/
+[Tue Mar 14 18:46:01.446362 2023] [php:warn] [pid 8164:tid 1296] [client ::1:54082] PHP Warning:  Attempt to read property "id" on null in C:\\Apache24\\htdocs\\category.php on line 60, referer: http://localhost/
+[Tue Mar 14 18:46:01.446362 2023] [php:warn] [pid 8164:tid 1296] [client ::1:54082] PHP Warning:  Undefined array key 0 in C:\\Apache24\\htdocs\\category.php on line 97, referer: http://localhost/
+[Tue Mar 14 18:46:01.447366 2023] [php:warn] [pid 8164:tid 1296] [client ::1:54082] PHP Warning:  Attempt to read property "id" on null in C:\\Apache24\\htdocs\\category.php on line 97, referer: http://localhost/
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined array key "cid" in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 28, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined array key "eid" in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 78, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry_title in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 176, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry_link in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 179, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry_text in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 182, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 185, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 185, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.453686 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.454687 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.454687 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.454687 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.454687 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.454687 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.454687 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.454687 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:26.454687 2023] [php:warn] [pid 8164:tid 1296] [client ::1:55813] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:48.465134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined array key "cid" in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 28, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined array key "eid" in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 78, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry_title in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 176, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry_link in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 179, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry_text in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 182, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 185, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 185, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.496134 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.548131 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined array key 0 in C:\\Apache24\\htdocs\\category.php on line 60, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.548131 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "id" on null in C:\\Apache24\\htdocs\\category.php on line 60, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.548131 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined array key 0 in C:\\Apache24\\htdocs\\category.php on line 60, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.549132 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "id" on null in C:\\Apache24\\htdocs\\category.php on line 60, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.549132 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Undefined array key 0 in C:\\Apache24\\htdocs\\category.php on line 97, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:48.549132 2023] [php:warn] [pid 8164:tid 1268] [client ::1:55814] PHP Warning:  Attempt to read property "id" on null in C:\\Apache24\\htdocs\\category.php on line 97, referer: http://localhost/admin/manage_entry.php?mid=1&pid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined array key "cid" in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 28, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined array key "eid" in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 78, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry_title in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 176, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry_link in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 179, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry_text in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 182, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 185, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 185, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.087320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.088320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.088320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.088320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.088320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.088320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.088320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.088320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:46:59.088320 2023] [php:warn] [pid 8164:tid 1296] [client ::1:52341] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/category.php?cid=1
+[Tue Mar 14 18:49:46.483566 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined array key "cid" in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 28, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.483566 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined array key "eid" in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 78, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 185, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 185, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined variable $entry in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.486572 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "color" on null in C:\\Apache24\\htdocs\\admin\\manage_entry.php on line 200, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.538569 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined array key 0 in C:\\Apache24\\htdocs\\category.php on line 60, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.538569 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "id" on null in C:\\Apache24\\htdocs\\category.php on line 60, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.539567 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Undefined array key 0 in C:\\Apache24\\htdocs\\category.php on line 97, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 18:49:46.539567 2023] [php:warn] [pid 8164:tid 1268] [client ::1:60567] PHP Warning:  Attempt to read property "id" on null in C:\\Apache24\\htdocs\\category.php on line 97, referer: http://localhost/admin/manage_entry.php?mid=1&pid=2
+[Tue Mar 14 19:01:24.920059 2023] [core:error] [pid 8164:tid 1268] (20023)The given path was above the root path: [client ::1:52687] AH00127: Cannot map GET /C:/Users/kerstin.reichinger/Downloads/A%20Sample%20PDF.pdf HTTP/1.1 to file

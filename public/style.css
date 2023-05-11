@@ -437,7 +437,7 @@ input[value=Löschen]:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: hsla(0deg, 0%, 15%, 0.6);
+  background-color: rgba(38, 38, 38, 0.6);
   z-index: 50;
 }
 .dialog__container {
